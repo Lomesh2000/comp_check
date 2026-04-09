@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  lexguard-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - PYTHONUNBUFFERED=1
+      - OMP_NUM_THREADS=1
+      - MKL_NUM_THREADS=1
+      - NUMEXPR_NUM_THREADS=1
+      - OPENBLAS_NUM_THREADS=1
+    volumes:
+      # Mount data directory for access to graphs and embeddings
+      - ./data:/home/app/data:ro
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '1.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 30s
+    networks:
+      - lexguard-net
+    restart: unless-stopped
+    # Prevent OOM kills
+    oom_kill_disable: false
+
+networks:
+  lexguard-net:
+    driver: bridge
+
+# Usage:
+# docker-compose up --build
+# docker-compose up -d  # Run in background
+# docker-compose up --build        # Build and run
+# docker-compose down              # Stop and remove containers
+# docker-compose logs -f           # View logs

@@ -1,0 +1,29 @@
+venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info
+dist
+build
+.git
+.gitignore
+.env
+.envrc
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+Potential\ Datasets
+Reference\ papers
+test
+.pytest_cache
+*.log
+*.pkl
+*.pickle
+node_modules
