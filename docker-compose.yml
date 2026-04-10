@@ -15,6 +15,7 @@ services:
       - NUMEXPR_NUM_THREADS=1
       - OPENBLAS_NUM_THREADS=1
     volumes:
+      - .:/app
       # Mount data directory for access to graphs and embeddings
       - ./data:/home/app/data:ro
     deploy:

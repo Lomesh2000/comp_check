@@ -292,6 +292,16 @@ app = FastAPI(
     version="1.0.0",
 )
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all (for dev)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.on_event("startup")
 async def startup_event():
@@ -304,13 +314,32 @@ async def startup_event():
         raise
 
 
+# @app.get("/health", response_model=HealthCheckResponse)
+# async def health_check():
+#     """Health check endpoint."""
+#     return HealthCheckResponse(
+#         status="ok" if all(
+#             [_static_graph, _eventic_graph, _embeddings_model, _eventic_nodes, _eventic_embs]
+#         ) else "degraded",
+#         loaded_models={
+#             "static_graph": _static_graph is not None,
+#             "eventic_graph": _eventic_graph is not None,
+#             "embeddings_model": _embeddings_model is not None,
+#             "faiss_index": _faiss_index is not None,
+#         },
+#     )
+
 @app.get("/health", response_model=HealthCheckResponse)
 async def health_check():
     """Health check endpoint."""
     return HealthCheckResponse(
-        status="ok" if all(
-            [_static_graph, _eventic_graph, _embeddings_model, _eventic_nodes, _eventic_embs]
-        ) else "degraded",
+        status="ok" if all([
+            _static_graph is not None,
+            _eventic_graph is not None,
+            _embeddings_model is not None,
+            _eventic_nodes is not None,
+            _eventic_embs is not None,
+        ]) else "degraded",
         loaded_models={
             "static_graph": _static_graph is not None,
             "eventic_graph": _eventic_graph is not None,
@@ -318,7 +347,6 @@ async def health_check():
             "faiss_index": _faiss_index is not None,
         },
     )
-
 
 @app.post("/compliance-check", response_model=ComplianceCheckResponse)
 async def compliance_check(request: ComplianceCheckRequest):
