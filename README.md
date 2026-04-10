@@ -1,4 +1,6 @@
-# LexGuard: Explainable Graph-based RAG Compliance Engine
+# PolicyLens: Explainable Graph-based RAG Compliance Engine
+
+## Understand policies. Detect risks. Explain decisions.
 
 ## 🚀 Overview
 LexGuard is an AI-powered compliance analysis system that uses a hybrid Graph + RAG pipeline to evaluate policy documents and detect violations with explainability.

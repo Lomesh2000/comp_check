@@ -26,7 +26,7 @@ export default function Home() {
         {/* 🔥 HEADER */}
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
-            LexGuard
+            Policylens
           </h1>
           <span className="text-gray-400 text-sm">
             AI Compliance Engine
