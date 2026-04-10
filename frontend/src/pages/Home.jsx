@@ -5,158 +5,208 @@ import UploadPanel from "../components/UploadPanel";
 export default function Home() {
   const [result, setResult] = useState(null);
   const [selectedChunk, setSelectedChunk] = useState(null);
-  let failedChunks = [];
-    let passedChunks = [];
 
-    if (result && result.type === "pdf") {
-    failedChunks = result.data.chunks.filter(c => c.verdict === "fail");
-    passedChunks = result.data.chunks.filter(c => c.verdict === "pass");
-    }
+  let failCount = 0;
+  let passCount = 0;
+  let total = 0;
+  let riskScore = 0;
+
+  if (result && result.type === "pdf") {
+    total = result.data.chunks.length;
+    failCount = result.data.chunks.filter(c => c.verdict === "fail").length;
+    passCount = result.data.chunks.filter(c => c.verdict === "pass").length;
+    riskScore = total > 0 ? Math.round((failCount / total) * 100) : 0;
+  }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 space-y-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white">
 
-      {/* Title */}
-      <h1 className="text-3xl font-bold text-blue-400">
-        LexGuard Compliance Dashboard
-      </h1>
+      <div className="max-w-7xl mx-auto p-6 space-y-6">
 
-      {/* Upload Panel */}
-      <UploadPanel onResult={setResult} />
+        {/* 🔥 HEADER */}
+        <div className="flex justify-between items-center">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+            LexGuard
+          </h1>
+          <span className="text-gray-400 text-sm">
+            AI Compliance Engine
+          </span>
+        </div>
 
-      {/* Result Section */}
-      {result && (
-        <div className="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-          
-          <h2 className="text-xl font-semibold mb-3">
-            Result
-          </h2>
+        {/* 🔥 STATS */}
+        {result && result.type === "pdf" && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-          {/* TEXT RESULT */}
-          {result.type === "text" && (
-            <div>
-              <p>
-                <strong>Verdict:</strong>{" "}
-                <span className="text-yellow-400">
-                  {result.data.verdict}
-                </span>
+            {/* FAIL */}
+            <div className="backdrop-blur-xl bg-red-500/10 border border-red-500/30 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition">
+              <p className="text-sm text-red-300">Failed</p>
+              <p className="text-3xl font-bold">{failCount}</p>
+            </div>
+
+            {/* PASS */}
+            <div className="backdrop-blur-xl bg-green-500/10 border border-green-500/30 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition">
+              <p className="text-sm text-green-300">Passed</p>
+              <p className="text-3xl font-bold">{passCount}</p>
+            </div>
+
+            {/* RISK */}
+            <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-5 rounded-xl shadow-lg hover:scale-[1.03] transition">
+              <p className="text-sm text-gray-300">Risk Score</p>
+              <p className={`text-3xl font-bold ${
+                riskScore > 50
+                  ? "text-red-400"
+                  : riskScore > 20
+                  ? "text-yellow-400"
+                  : "text-green-400"
+              }`}>
+                {riskScore}%
               </p>
+            </div>
 
-              <p className="mt-2">
-                <strong>LLM Reply:</strong>
-              </p>
-              <div className="bg-gray-900 p-3 rounded mt-1">
-                {result.data.llm_reply || "No response"}
+          </div>
+        )}
+
+        {/* 🔥 MAIN GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+          {/* LEFT */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-6 backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl shadow-xl">
+              <UploadPanel onResult={setResult} />
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <div className="lg:col-span-3 space-y-6">
+
+            {/* SUMMARY */}
+            {result && (
+              <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-6 rounded-xl shadow-xl">
+
+                <h2 className="text-xs text-gray-400 uppercase mb-2 tracking-wide">
+                  Summary
+                </h2>
+
+                <div className="flex justify-between items-center">
+                  <div className="text-3xl font-bold">
+                    <span className={
+                      result.data.summary_verdict === "fail"
+                        ? "text-red-400"
+                        : result.data.summary_verdict === "pass"
+                        ? "text-green-400"
+                        : "text-yellow-400"
+                    }>
+                      {result.data.summary_verdict}
+                    </span>
+                  </div>
+
+                  <div className="text-right text-sm text-gray-400">
+                    <div>{result.data.total_chunks}</div>
+                    <div>chunks analyzed</div>
+                  </div>
+                </div>
+
               </div>
-            </div>
-          )}
-
-          {/* PDF RESULT */}
-          {result.type === "pdf" && (
-            <div className="space-y-4">
-
-                <p>
-                <strong>Summary Verdict:</strong>{" "}
-                <span className="text-yellow-400">
-                    {result.data.summary_verdict}
-                </span>
-                </p>
-
-                <p>Total Chunks: {result.data.total_chunks}</p>
-
-                {/* 🔥 Chunk List */}
-                <ChunkList
-                chunks={result.data.chunks}
-                onSelect={setSelectedChunk}
-                />
-
-                {/* 🔥 Selected Chunk Details */}
-                {selectedChunk && (
-                    <div className="bg-gray-900 p-5 rounded-xl border border-gray-700 shadow-md space-y-4">
-                        
-                        <h3 className="text-lg font-bold">
-                        Chunk {selectedChunk.chunk_id}
-                        </h3>
-
-                        <p>
-                        <strong>Verdict:</strong>{" "}
-                        <span className={
-                            selectedChunk.verdict === "fail"
-                            ? "text-red-400"
-                            : "text-green-400"
-                        }>
-                            {selectedChunk.verdict}
-                        </span>
-                        </p>
-
-                        {/* Text */}
-                        <div>
-                        <p className="font-semibold">Text</p>
-                        <div className="bg-black p-2 rounded text-sm">
-                            {selectedChunk.text_preview}
-                        </div>
-                        </div>
-
-                        {/* Evidence */}
-                        <div>
-                        <p className="font-semibold">Evidence</p>
-                        <pre className="bg-black p-2 rounded text-xs overflow-auto">
-                            {JSON.stringify(selectedChunk.evidence, null, 2)}
-                        </pre>
-                        </div>
-
-                        {/* LLM Reply */}
-                        <div>
-                        <p className="font-semibold">LLM Reply</p>
-                        <div className="bg-black p-2 rounded">
-                            {selectedChunk.llm_reply || "No reply"}
-                        </div>
-                        </div>
-
-                        {/* 🔥 Graph Insights */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-                        {/* Hits */}
-                        <div>
-                            <p className="font-semibold text-blue-400">Hits</p>
-                            <div className="bg-black p-2 rounded text-xs max-h-40 overflow-auto">
-                            {selectedChunk.hits?.map((h, i) => (
-                                <div key={i}>{h}</div>
-                            ))}
-                            </div>
-                        </div>
-
-                        {/* Positive */}
-                        <div>
-                            <p className="font-semibold text-green-400">P (Positive)</p>
-                            <div className="bg-black p-2 rounded text-xs max-h-40 overflow-auto">
-                            {selectedChunk.P?.map((p, i) => (
-                                <div key={i}>{p}</div>
-                            ))}
-                            </div>
-                        </div>
-
-                        {/* Negative */}
-                        <div>
-                            <p className="font-semibold text-red-400">N (Negative)</p>
-                            <div className="bg-black p-2 rounded text-xs max-h-40 overflow-auto">
-                            {selectedChunk.N?.map((n, i) => (
-                                <div key={i}>{n}</div>
-                            ))}
-                            </div>
-                        </div>
-
-                        </div>
-
-                    </div>
-                    )}
-
-            </div>
             )}
 
-        </div>
-      )}
+            {/* 🔥 CONTENT */}
+            {result && result.type === "pdf" && (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
+                {/* LIST */}
+                <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl shadow-xl p-4">
+                  <ChunkList
+                    chunks={result.data.chunks}
+                    onSelect={setSelectedChunk}
+                    selectedChunk={selectedChunk}
+                  />
+                </div>
+
+                {/* DETAILS */}
+                <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl shadow-xl p-5">
+
+                  {selectedChunk ? (
+                    <div className="space-y-4">
+
+                      <div className="flex justify-between items-center">
+                        <h3 className="text-lg font-bold">
+                          Chunk {selectedChunk.chunk_id}
+                        </h3>
+
+                        <span className={`px-2 py-1 rounded text-xs ${
+                          selectedChunk.verdict === "fail"
+                            ? "bg-red-500/20 text-red-400"
+                            : "bg-green-500/20 text-green-400"
+                        }`}>
+                          {selectedChunk.verdict}
+                        </span>
+                      </div>
+
+                      <div>
+                        <p className="text-xs text-gray-400 mb-1">Text</p>
+                        <div className="bg-black/60 p-3 rounded text-sm">
+                          {selectedChunk.text_preview}
+                        </div>
+                      </div>
+
+                      <div>
+                        <p className="text-xs text-gray-400 mb-1">LLM Reply</p>
+                        <div className="bg-black/60 p-3 rounded text-sm">
+                          {selectedChunk.llm_reply || "No reply"}
+                        </div>
+                      </div>
+
+                      {/* GRAPH */}
+                      <div className="grid grid-cols-3 gap-3 text-xs">
+
+                        <div>
+                          <p className="text-blue-400 mb-1">Hits</p>
+                          <div className="bg-black/60 p-2 rounded max-h-28 overflow-auto">
+                            {selectedChunk.hits?.map((h, i) => (
+                              <div key={i}>{h}</div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <p className="text-green-400 mb-1">P</p>
+                          <div className="bg-black/60 p-2 rounded max-h-28 overflow-auto">
+                            {selectedChunk.P?.map((p, i) => (
+                              <div key={i}>{p}</div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <p className="text-red-400 mb-1">N</p>
+                          <div className="bg-black/60 p-2 rounded max-h-28 overflow-auto">
+                            {selectedChunk.N?.map((n, i) => (
+                              <div key={i}>{n}</div>
+                            ))}
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-gray-500">
+                      <div className="text-center">
+                        <div className="text-2xl mb-2">✨</div>
+                        <p>Select a chunk to explore insights</p>
+                      </div>
+                    </div>
+                  )}
+
+                </div>
+
+              </div>
+            )}
+
+          </div>
+        </div>
+
+      </div>
     </div>
   );
 }
