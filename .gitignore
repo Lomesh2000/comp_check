@@ -78,3 +78,4 @@ Thumbs.db
 /data/preds.json
 /data/preds.json.partial
 /tmp/
+node_modules/
