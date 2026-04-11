@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white">
 
-      <div className="max-w-7xl mx-auto p-6 space-y-6">
+      <div className="w-full px-6 py-6 space-y-6">
 
         {/* 🔥 HEADER */}
         <div className="flex justify-between items-center">
