@@ -57,7 +57,7 @@ else:
 # Local Flan-T5 lazy loader
 _local_model = None
 _local_tokenizer = None
-def init_local_flan(model_name="google/flan-t5-small"):
+def init_local_flan(model_name="google/flan-t5-large"):
     global _local_model, _local_tokenizer
     if _local_model is not None:
         return _local_model, _local_tokenizer
@@ -93,9 +93,25 @@ def call_llm(prompt: str, use_openai_priority: bool = True, model_openai: str = 
     model, tokenizer = init_local_flan()
     if model is None or tokenizer is None:
         raise RuntimeError("No LLM available (OpenAI failed and no local model).")
+        tokens = tokenizer(prompt)["input_ids"]
+
+    tokens = tokenizer(prompt)["input_ids"]
+
+    print("\n" + "="*80)
+    print("INPUT TOKENS:", len(tokens))
+
+    if len(tokens) > 1024:
+        print("⚠️ WARNING: PROMPT WILL BE TRUNCATED!")
+
+    print("="*80)
     inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=1024)
     out = model.generate(**inputs, max_new_tokens=256, do_sample=False)
     text = tokenizer.decode(out[0], skip_special_tokens=True)
+    print("\n" + "="*80)
+    print("RAW MODEL OUTPUT")
+    print("="*80)
+    print(text)
+    print("="*80)
     return text
 
 # Prompt template (Tempt3)
@@ -126,6 +142,67 @@ Be concise and cite the conflicting fragments.
 Only output either <Compliance Check Passed> or <Compliance Check Failed> followed by the JSON array (if failed).
 """
 
+Tempt3 = """
+Business text:
+{chunk}
+
+Rules:
+{triples_text}
+
+Example 1:
+
+Rule:
+Data Principal hasRightTo Withdraw Consent
+
+Business text:
+Users cannot withdraw consent once provided.
+
+Answer:
+FAIL
+
+Example 2:
+
+Rule:
+Personal Data mustBeDeletedAfter Purpose Completion
+
+Business text:
+Personal data is deleted once the purpose is completed.
+
+Answer:
+PASS
+
+Now evaluate the actual input.
+
+Answer ONLY:
+
+PASS
+
+or
+
+FAIL
+"""
+
+Tempt3 = """
+You are a compliance classifier.
+
+Business text:
+{chunk}
+
+Regulatory rules:
+{triples_text}
+
+Question:
+
+Does the business text violate ANY of the regulatory rules?
+
+Answer ONLY one word.
+
+PASS = No violation.
+FAIL = At least one violation.
+
+Answer:
+"""
+
 def load_graph(path: str) -> nx.DiGraph:
     if not os.path.exists(path):
         raise FileNotFoundError(f"Graph file not found: {path}")
@@ -135,6 +212,18 @@ def load_graph(path: str) -> nx.DiGraph:
     return G
 
 def load_node_embeddings(npz_path: str) -> (List[str], np.ndarray):
+    # print("LOADING:", npz_path)
+
+    arr = np.load(npz_path, allow_pickle=True)
+
+    # print("FILES:", arr.files)
+
+    node_order = list(arr["node_order"])
+    embeddings = arr["embeddings"]
+
+    # print("NODES:", len(node_order))
+    # print("EMB SHAPE:", embeddings.shape)
+
     if not os.path.exists(npz_path):
         logger.warning("Node embeddings file not found: %s", npz_path)
         return [], None
@@ -162,7 +251,11 @@ def compute_eventic_node_embeddings(G_eventic: nx.Graph, model: SentenceTransfor
     return nodes, embs
 
 def build_fused_subgraph(chunk_text: str, chunk_vec: np.ndarray, eventic_nodes: List[str], eventic_embs: np.ndarray,
-                         eventic_graph: nx.Graph, static_graph: nx.Graph, lambda_thresh: float = 0.75, hop_k: int = 1):
+                         eventic_graph: nx.Graph, static_graph: nx.Graph, 
+                         static_node_order,
+                         static_embs,
+                         model,
+                         lambda_thresh: float = 0.75, hop_k: int = 1):
     """
     1. Get eventic nodes whose cosine with chunk >= lambda_thresh
     2. P = intersection of those hits with static_graph nodes (exact string match)
@@ -172,20 +265,107 @@ def build_fused_subgraph(chunk_text: str, chunk_vec: np.ndarray, eventic_nodes: 
     # dot product with pre-normalized vectors: chunk_vec shape (d,), eventic_embs shape (N,d)
     sims = floatable = None
     sims = np.dot(eventic_embs, chunk_vec.reshape(-1))
-    hit_idx = np.where(sims >= lambda_thresh)[0]
+    top5 = np.argsort(sims)[-5:][::-1]
+
+    # print("\nTOP 5")
+    # for idx in top5:
+        # print(
+        #     f"{eventic_nodes[idx]} -> {sims[idx]:.4f}"
+        # )
+    # hit_idx = np.where(sims >= lambda_thresh)[0]
+    topk = min(10, len(eventic_nodes))
+    hit_idx = np.argsort(sims)[-topk:][::-1]   
+
     hits = [eventic_nodes[i] for i in hit_idx]
-    P = [h for h in hits if h in static_graph.nodes]
-    N = set()
+    # P = [h for h in hits if h in static_graph.nodes]
+
+    P = []
+
+    for hit in hits:
+
+        hit_emb = model.encode(
+            [hit],
+            convert_to_numpy=True
+        )[0]
+
+        hit_emb = hit_emb / (
+            np.linalg.norm(hit_emb) + 1e-12
+        )
+
+        sims = np.dot(
+            static_embs,
+            hit_emb
+        )
+
+        # print("\n====================")
+        # print("EVENTIC HIT:", hit)
+        # print("TOP STATIC MATCHES")
+        # print("====================")
+
+        # for idx in np.argsort(sims)[::-1][:10]:
+        #     print(
+        #         static_node_order[idx],
+        #         "->",
+        #         round(float(sims[idx]), 4)
+        #     )
+
+        # best_idx = np.argmax(sims)
+
+        # # print(
+        # #     f"{hit} --> "
+        # #     f"{static_node_order[best_idx]} "
+        # #     f"({sims[best_idx]:.3f})"
+        # # )
+
+        # if sims[best_idx] >= 0.50:
+        #     P.append(
+        #         static_node_order[best_idx]
+
+        top_matches = np.argsort(sims)[::-1][:3]
+
+        for idx in top_matches:
+            if sims[idx] >= 0.45:
+                P.append(static_node_order[idx])
+            # )
+    print("\nPOSITIVE STATIC NODES")
     for p in P:
-        # neighbors (in + out)
-        for nbr in static_graph.predecessors(p) if hasattr(static_graph, "predecessors") else []:
-            N.add(nbr)
-        for nbr in static_graph.successors(p) if hasattr(static_graph, "successors") else []:
-            N.add(nbr)
-        # undirected neighbors for safety
-        for nbr in static_graph.neighbors(p):
-            N.add(nbr)
+        print(p)
+
+    # Remove duplicates while preserving order
+    P = list(dict.fromkeys(P))
+
+    # Keep only top 5 nodes
+    P = P[:5]
+
+    print("\nFILTERED P")
+    for p in P:
+        print(p)
+    N = set()
+    # for p in P:
+    #     # neighbors (in + out)
+    #     for nbr in static_graph.predecessors(p) if hasattr(static_graph, "predecessors") else []:
+    #         N.add(nbr)
+    #     for nbr in static_graph.successors(p) if hasattr(static_graph, "successors") else []:
+    #         N.add(nbr)
+    #     # undirected neighbors for safety
+    #     for nbr in static_graph.neighbors(p):
+    #         N.add(nbr)
     # If hop_k > 1 expand (simple BFS)
+
+    N = set()
+
+    for p in P:
+
+        # Add immediate predecessors (subjects)
+        if static_graph.has_node(p):
+            for pred in static_graph.predecessors(p):
+                N.add(pred)
+
+        # Add immediate successors (objects)
+        if static_graph.has_node(p):
+            for succ in static_graph.successors(p):
+                N.add(succ)
+
     if hop_k > 1 and N:
         frontier = set(N)
         for _ in range(hop_k - 1):
@@ -199,7 +379,8 @@ def build_fused_subgraph(chunk_text: str, chunk_vec: np.ndarray, eventic_nodes: 
             N.update(newf)
             frontier = newf
 
-    fused_nodes = set(hits) | set(P) | set(N)
+    # fused_nodes = set(hits) | set(P) | set(N)
+    fused_nodes = set(P) | set(N)
     # build new graph
     Gfus = nx.DiGraph()
     # add nodes and node attributes (from either graph if available)
@@ -221,7 +402,10 @@ def build_fused_subgraph(chunk_text: str, chunk_vec: np.ndarray, eventic_nodes: 
         if u in fused_nodes and v in fused_nodes:
             # keep predicate attribute if present
             Gfus.add_edge(u, v, **data)
-
+    # print(len(eventic_nodes))
+    # print(np.max(sims))
+    # print(np.min(sims))
+    # print(len(hit_idx))
     return Gfus, hits, P, list(N)
 
 
@@ -252,10 +436,47 @@ def main(args):
 
     # load static graph
     static_graph = load_graph(args.static_graph) if args.static_graph else nx.DiGraph()
+
+    # print("STATIC GRAPH SIZE")
+    # print(static_graph.number_of_nodes())
+    # print(static_graph.number_of_edges())
+
+    # for u, v, d in list(static_graph.edges(data=True))[:50]:
+        # print(u, d.get("predicate"), v)
+
+    # print("\n====================")
+    # print("STATIC GRAPH NODES")
+    # print("====================")
+
+    # for node in static_graph.nodes():
+        # print(repr(node))
+
+    # print("====================\n")
     static_node_order, static_embs = ([], None)
-    npz_path = os.path.join(os.path.dirname(args.static_graph), "node_embeddings.npz") if args.static_graph else None
+    # npz_path = os.path.join(os.path.dirname(args.static_graph), "node_embeddings.npz") if args.static_graph else None
+    npz_path = os.path.join(
+                os.path.dirname(args.static_graph),
+                "static",
+                "node_embeddings.npz"
+            ) if args.static_graph else None
+
+    # if static_embs is None:
+    #     raise RuntimeError(
+    #         f"Static embeddings not loaded from {npz_path}"
+    #     )
+    
+    # print("STATIC NODE ORDER LEN =", len(static_node_order))
+    # print(
+    #     "STATIC EMBS SHAPE =",
+    #     None if static_embs is None else static_embs.shape
+    # )
+
+    # print("NPZ PATH:", npz_path)
+    # print("EXISTS:", os.path.exists(npz_path))
     if npz_path and os.path.exists(npz_path):
         static_node_order, static_embs = load_node_embeddings(npz_path)
+        # print("NPZ PATH =", npz_path)
+        # print("STATIC EMBS =", static_embs is None)
 
     # load eventic graph
     if not args.eventic_graph or not os.path.exists(args.eventic_graph):
@@ -304,10 +525,47 @@ def main(args):
         cvec = cvec / (np.linalg.norm(cvec) + 1e-12)
 
         # build fused graph
-        Gfus, hits, P, N = build_fused_subgraph(text, cvec, eventic_nodes, eventic_embs, eventic_graph, static_graph,
-                                                lambda_thresh=args.lambda_thresh, hop_k=args.hop_k)
+        # Gfus, hits, P, N = build_fused_subgraph(text, cvec, eventic_nodes, eventic_embs, eventic_graph, static_graph,
+        #                                         lambda_thresh=args.lambda_thresh, hop_k=args.hop_k)
+        
+        Gfus, hits, P, N = build_fused_subgraph(
+                                                text,
+                                                cvec,
+                                                eventic_nodes,
+                                                eventic_embs,
+                                                eventic_graph,
+                                                static_graph,
+                                                static_node_order,
+                                                static_embs,
+                                                model,
+                                                lambda_thresh=args.lambda_thresh,
+                                                hop_k=args.hop_k
+                                                )
+
+        # print("\n========== GRAPH STATS ==========")
+        # print("Hits:", len(hits))
+        # print("P:", len(P))
+        # print("N:", len(N))
+        # print("Fused nodes:", Gfus.number_of_nodes())
+        # print("Fused edges:", Gfus.number_of_edges())
+
+        # print("\nP nodes:")
+        # for p in P:
+            # print(p)
+
+        # print("===============================\n")
+        # print("P =", P)
+        # print("N =", N)
+        # print("FUSED NODES =", list(Gfus.nodes())[:20])
+        # print("FUSED EDGES =", list(Gfus.edges(data=True))[:20])
         triples_text = triples_text_from_graph(Gfus, max_items=args.max_triples)
+        print("\nNUMBER OF RULES =", len(triples_text.split("\n")))
         prompt = Tempt3.format(chunk=text[:2000] + ("\n\n[TRUNCATED]" if len(text) > 2000 else ""), triples_text=triples_text)
+        print("\n" + "="*80)
+        print("PROMPT SENT TO LLM")
+        print("="*80)
+        print(prompt)
+        print("="*80 + "\n")
         try:
             reply = call_llm(prompt, use_openai_priority=not args.prefer_local, model_openai=args.openai_model, max_tokens=256)
         except Exception as e:
@@ -333,12 +591,27 @@ def main(args):
                     evidence = [ {"raw": reply.split("<Compliance Check Failed>")[-1].strip()} ]
             else:
                 # heuristic classification
-                lower = reply.lower()
-                if "failed" in lower or "violate" in lower or "violation" in lower:
+                lower = reply.strip().lower()
+
+                if lower.startswith("fail"):
                     verdict = "fail"
+
+                elif lower.startswith("pass"):
+                    verdict = "pass"
+
+                elif "failed" in lower or "violate" in lower or "violation" in lower:
+                    verdict = "fail"
+
                 else:
                     verdict = "pass"
-                evidence = [ {"raw": reply[:400]} ]
+
+                evidence = [{"raw": reply[:400]}]
+                # lower = reply.lower()
+                # if "failed" in lower or "violate" in lower or "violation" in lower:
+                #     verdict = "fail"
+                # else:
+                #     verdict = "pass"
+                # evidence = [ {"raw": reply[:400]} ]
         else:
             verdict = "unknown"
             evidence = []
