@@ -1,0 +1,19 @@
+Example 1 (COMPLIANT)
+
+The Data Fiduciary provides notice before collecting personal data. Users may withdraw consent at any time. A grievance redressal mechanism is available.
+
+Example 2 (NON-COMPLIANT)
+
+Users cannot withdraw consent once provided. Personal data will be stored indefinitely.
+
+Example 3 (NON-COMPLIANT)
+
+Personal data may be shared with third parties without notice or consent.
+
+Example 4 (COMPLIANT)
+
+Personal data is deleted once the purpose for processing is completed.
+
+Example 5 (NON-COMPLIANT)
+
+No security safeguards are implemented to protect stored personal data.
