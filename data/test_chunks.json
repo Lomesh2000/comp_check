@@ -1,0 +1,22 @@
+[
+  {
+    "filename": "test_policy.txt",
+    "text": "The Data Fiduciary provides notice before collecting personal data. Users may withdraw consent at any time. A grievance redressal mechanism is available."
+  },
+  {
+    "filename": "test_policy.txt",
+    "text": "Users cannot withdraw consent once provided. Personal data will be stored indefinitely."
+  },
+  {
+    "filename": "test_policy.txt",
+    "text": "Personal data may be shared with third parties without notice or consent."
+  },
+  {
+    "filename": "test_policy.txt",
+    "text": "Personal data is deleted once the purpose for processing is completed."
+  },
+  {
+    "filename": "test_policy.txt",
+    "text": "No security safeguards are implemented to protect stored personal data."
+  }
+]
