@@ -1,197 +1,229 @@
 [
   {
     "chunk_id": 0,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
+    "filename": "test_policy.txt",
+    "hits": [
+      "ACTION::not affect the legality of processing of thepersonal data based on consent before its withdrawal",
+      "Data Fiduciary",
+      "ACTION::have the right to obtain from the Data Fiduciary to",
+      "ACTION::evaluate the compliance of the Significant Data Fiduciary in accordance with theprovisions of this Act; and",
+      "ACTION::accompany or precede the request for the personal data with notice to X,describing the personal data and the purpose of its processing",
+      "ACTION::also disclose to the CentralGovernment any subsequent acceptance of employment with any Data Fiduciary againstwhom proceedings were initiated by or before such Chairperson or other Member",
+      "ACTION::notapply to such Data Fiduciary or classes of Data Fiduciaries for such period as may bespecified in the notification",
+      "ACTION::signify anagreement to the processing of her personal data for the specified purpose and be limited tosuch personal data as is necessary for such specified purpose",
+      "ACTION::not undertake such processing of personal data that is",
+      "ACTION::erase her personal data unless retention of the same is necessary for thespecified purpose or for compliance with any law for the time being in force"
     ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
+    "P": [
+      "Withdraw Consent",
+      "Consent",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "Significant Data Fiduciary"
+    ],
+    "N": [
+      "Notice",
+      "Grievance Redressal",
+      "Data Accuracy",
+      "Data Protection Officer",
+      "Penalty",
+      "Revocable",
+      "Data Principal",
+      "Consent Manager",
+      "Informed",
+      "Data Fiduciary",
+      "Specific",
+      "Data Breach",
+      "Third Party Sharing",
+      "Consent",
+      "Risk Assessment",
+      "Compliance Records",
+      "Compliance",
+      "Data Audit",
+      "Security Safeguards",
+      "Free",
+      "Enhanced Protection",
+      "Unambiguous",
+      "Additional Obligations"
+    ],
+    "verdict": "unknown",
+    "evidence": [],
+    "llm_reply": null,
+    "triples_text": "- Data Fiduciary must obtain Consent.\n- Data Fiduciary must provide Grievance Redressal.\n- Data Fiduciary must provide Notice.\n- Data Fiduciary must notify Data Breach.\n- Data Fiduciary is subject to Penalty.\n- Data Principal has the right to Withdraw Consent.\n- Significant Data Fiduciary is subject to Additional Obligations.\n- Data Fiduciary must maintain Compliance Records."
   },
   {
     "chunk_id": 1,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
+    "filename": "test_policy.txt",
+    "hits": [
+      "ACTION::not affect the legality of processing of thepersonal data based on consent before its withdrawal",
+      "ACTION::have the right to withdraw her consent at any time, with the",
+      "ACTION::erase her personal data unless retention of the same is necessary for thespecified purpose or for compliance with any law for the time being in force",
+      "ACTION::nolonger retain her personal data",
+      "ACTION::not undertake such processing of personal data that is",
+      "ACTION::cease to process the personal data of X;",
+      "ACTION::itself cease, and shallcause Y to cease, the processing of the personal data of Z for emailing bills",
+      "ACTION::protect personal data in its possession or under its control,",
+      "ACTION::retain X’s personal data for the said period",
+      "ACTION::signify anagreement to the processing of her personal data for the specified purpose and be limited tosuch personal data as is necessary for such specified purpose"
     ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
+    "P": [
+      "Withdraw Consent",
+      "Consent",
+      "Sensitive Personal Data",
+      "Parental Consent",
+      "Personal Data"
+    ],
+    "N": [
+      "Consent Manager",
+      "Purpose Completion",
+      "Informed",
+      "Free",
+      "Data Fiduciary",
+      "Specific",
+      "Enhanced Protection",
+      "Third Party Sharing",
+      "Unambiguous",
+      "Revocable",
+      "Lawful Purpose",
+      "Children Data",
+      "Data Principal"
+    ],
+    "verdict": "unknown",
+    "evidence": [],
+    "llm_reply": null,
+    "triples_text": "- Data Principal has the right to Withdraw Consent.\n- Personal Data must be deleted after Purpose Completion.\n- Consent must be Revocable.\n- Data Fiduciary must obtain Consent.\n- Personal Data must be processed for Lawful Purpose.\n- Consent must be Free.\n- Children Data requires Parental Consent.\n- Consent Manager assists Data Principal."
   },
   {
     "chunk_id": 2,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "APPLICABILITY"
-      }
+    "filename": "test_policy.txt",
+    "hits": [
+      "ACTION::accompany or precede the request for the personal data with notice to X,describing the personal data and the purpose of its processing",
+      "ACTION::protect personal data in its possession or under its control,",
+      "ACTION::not affect the legality of processing of thepersonal data based on consent before its withdrawal",
+      "ACTION::not undertake such processing of personal data that is",
+      "ACTION::signify anagreement to the processing of her personal data for the specified purpose and be limited tosuch personal data as is necessary for such specified purpose",
+      "ACTION::nolonger retain her personal data",
+      "ACTION::have the right to obtain from the Data Fiduciary to",
+      "ACTION::erase her personal data unless retention of the same is necessary for thespecified purpose or for compliance with any law for the time being in force",
+      "ACTION::itself cease, and shallcause Y to cease, the processing of the personal data of Z for emailing bills",
+      "Data Fiduciary"
     ],
-    "llm_reply": "APPLICABILITY",
-    "triples_text": ""
+    "P": [
+      "Personal Data",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "Data Protection Officer",
+      "Withdraw Consent"
+    ],
+    "N": [
+      "Significant Data Fiduciary",
+      "Purpose Completion",
+      "Notice",
+      "Grievance Redressal",
+      "Data Breach",
+      "Enhanced Protection",
+      "Consent",
+      "Data Accuracy",
+      "Penalty",
+      "Security Safeguards",
+      "Lawful Purpose",
+      "Compliance Records",
+      "Data Principal"
+    ],
+    "verdict": "unknown",
+    "evidence": [],
+    "llm_reply": null,
+    "triples_text": "- Personal Data must be processed for Lawful Purpose.\n- Data Fiduciary must obtain Consent.\n- Sensitive Personal Data requires Enhanced Protection.\n- Personal Data must be deleted after Purpose Completion.\n- Data Fiduciary must notify Data Breach.\n- Data Fiduciary must provide Notice.\n- Data Principal has the right to Withdraw Consent.\n- Data Fiduciary must maintain Compliance Records."
   },
   {
     "chunk_id": 3,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
+    "filename": "test_policy.txt",
+    "hits": [
+      "ACTION::erase her personal data unless retention of the same is necessary for thespecified purpose or for compliance with any law for the time being in force",
+      "ACTION::not undertake such processing of personal data that is",
+      "ACTION::cease to process the personal data of X;",
+      "ACTION::nolonger retain her personal data",
+      "ACTION::signify anagreement to the processing of her personal data for the specified purpose and be limited tosuch personal data as is necessary for such specified purpose",
+      "ACTION::accompany or precede the request for the personal data with notice to X,describing the personal data and the purpose of its processing",
+      "ACTION::itself cease, and shallcause Y to cease, the processing of the personal data of Z for emailing bills",
+      "ACTION::not affect the legality of processing of thepersonal data based on consent before its withdrawal",
+      "ACTION::retain X’s personal data for the said period",
+      "ACTION::protect personal data in its possession or under its control,"
     ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Fiduciary",
+      "Withdraw Consent",
+      "Consent"
+    ],
+    "N": [
+      "Notice",
+      "Grievance Redressal",
+      "Data Accuracy",
+      "Penalty",
+      "Revocable",
+      "Lawful Purpose",
+      "Data Principal",
+      "Consent Manager",
+      "Purpose Completion",
+      "Informed",
+      "Data Fiduciary",
+      "Specific",
+      "Data Breach",
+      "Third Party Sharing",
+      "Consent",
+      "Compliance Records",
+      "Security Safeguards",
+      "Free",
+      "Enhanced Protection",
+      "Unambiguous"
+    ],
+    "verdict": "unknown",
+    "evidence": [],
+    "llm_reply": null,
+    "triples_text": "- Personal Data must be deleted after Purpose Completion.\n- Personal Data must be processed for Lawful Purpose.\n- Sensitive Personal Data requires Enhanced Protection.\n- Data Fiduciary must obtain Consent.\n- Data Fiduciary is subject to Penalty.\n- Data Principal has the right to Withdraw Consent.\n- Data Fiduciary must notify Data Breach.\n- Data Fiduciary must maintain Compliance Records."
   },
   {
     "chunk_id": 4,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
+    "filename": "test_policy.txt",
+    "hits": [
+      "ACTION::not undertake such processing of personal data that is",
+      "ACTION::protect personal data in its possession or under its control,",
+      "ACTION::erase her personal data unless retention of the same is necessary for thespecified purpose or for compliance with any law for the time being in force",
+      "ACTION::nolonger retain her personal data",
+      "ACTION::cease to process the personal data of X;",
+      "ACTION::signify anagreement to the processing of her personal data for the specified purpose and be limited tosuch personal data as is necessary for such specified purpose",
+      "ACTION::not affect the legality of processing of thepersonal data based on consent before its withdrawal",
+      "ACTION::itself cease, and shallcause Y to cease, the processing of the personal data of Z for emailing bills",
+      "ACTION::not apply in respect of the processing of personal",
+      "ACTION::not prevent access to any premises or take into"
     ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
-  },
-  {
-    "chunk_id": 5,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Protection Officer",
+      "Data Fiduciary",
+      "Withdraw Consent"
     ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
-  },
-  {
-    "chunk_id": 6,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
+    "N": [
+      "Lawful Purpose",
+      "Purpose Completion",
+      "Notice",
+      "Grievance Redressal",
+      "Data Breach",
+      "Enhanced Protection",
+      "Consent",
+      "Data Accuracy",
+      "Penalty",
+      "Security Safeguards",
+      "Significant Data Fiduciary",
+      "Compliance Records",
+      "Data Principal"
     ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
-  },
-  {
-    "chunk_id": 7,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
-    ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
-  },
-  {
-    "chunk_id": 8,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
-    ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
-  },
-  {
-    "chunk_id": 9,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
-    ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
-  },
-  {
-    "chunk_id": 10,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
-    ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
-  },
-  {
-    "chunk_id": 11,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Compliance Check Passed>"
-      }
-    ],
-    "llm_reply": "Compliance Check Passed>",
-    "triples_text": ""
-  },
-  {
-    "chunk_id": 12,
-    "filename": "Indian Oil Priivacy policy.pdf",
-    "hits": [],
-    "P": [],
-    "N": [],
-    "verdict": "pass",
-    "evidence": [
-      {
-        "raw": "Conflicting evidence entries are not conflicting."
-      }
-    ],
-    "llm_reply": "Conflicting evidence entries are not conflicting.",
-    "triples_text": ""
+    "verdict": "unknown",
+    "evidence": [],
+    "llm_reply": null,
+    "triples_text": "- Sensitive Personal Data requires Enhanced Protection.\n- Data Fiduciary must implement Security Safeguards.\n- Personal Data must be processed for Lawful Purpose.\n- Personal Data must be deleted after Purpose Completion.\n- Data Fiduciary must maintain Compliance Records.\n- Data Fiduciary must notify Data Breach.\n- Data Principal has the right to Withdraw Consent.\n- Data Fiduciary must obtain Consent."
   }
 ]

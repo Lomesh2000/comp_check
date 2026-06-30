@@ -1,0 +1,22 @@
+[
+{
+"text": "The Data Fiduciary provides notice before collecting personal data. Users may withdraw consent at any time.",
+"expected": "PASS"
+},
+{
+"text": "Users cannot withdraw consent once provided.",
+"expected": "FAIL"
+},
+{
+"text": "Personal data may be shared with third parties without notice or consent.",
+"expected": "FAIL"
+},
+{
+"text": "Personal data is deleted once the purpose for processing is completed.",
+"expected": "PASS"
+},
+{
+"text": "No security safeguards are implemented to protect stored personal data.",
+"expected": "FAIL"
+}
+]
