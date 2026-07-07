@@ -1,0 +1,2463 @@
+[
+  {
+    "chunk_id": 58,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      59,
+      86,
+      82
+    ],
+    "hits": [
+      "Contact Information",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer",
+      "Access",
+      "Data Protection Board",
+      "Consent Manager",
+      "ACTION::mayBeFiledAgainst Board Decision",
+      "ACTION::RightTo Nominee",
+      "ACTION::manages Consent",
+      "ACTION::RightTo Access"
+    ],
+    "P": [
+      "Contact Information",
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Breach",
+      "Data Audit"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Notice",
+      "Penalty",
+      "Harm",
+      "Appeal",
+      "Directions",
+      "Notification",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Notice mustDescribe Contact Information\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 59,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      58,
+      86,
+      1658
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Data Protection Officer",
+      "Personal Data",
+      "ACTION::Appoint Data Protection Officer",
+      "ACTION::mayBeFiledWith Data Protection Board",
+      "Data Fiduciary",
+      "Data Audit",
+      "Data Protection Board",
+      "Data Breach",
+      "ACTION::Conduct Data Audit"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Lawful Purpose",
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Enhanced Protection",
+      "Penalty",
+      "Harm",
+      "Appeal",
+      "Directions",
+      "Purpose Completion",
+      "Notification",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty"
+  },
+  {
+    "chunk_id": 60,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      72,
+      68,
+      95
+    ],
+    "hits": [
+      "ACTION::Describe Rights",
+      "Compliance",
+      "ACTION::Ensure Compliance",
+      "ACTION::Appoint Data Protection Officer",
+      "ACTION::manages Consent",
+      "ACTION::subjectTo Government Restrictions",
+      "Access",
+      "Compliance Records",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "Consent Manager"
+    ],
+    "P": [
+      "Rights",
+      "Compliance",
+      "Compliance Records",
+      "Lawful Purpose",
+      "Security Safeguards"
+    ],
+    "N": [
+      "Data Fiduciary",
+      "Notice",
+      "Personal Data",
+      "Significant Data Fiduciary"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustMaintain Compliance Records\n- Notice mustDescribe Rights"
+  },
+  {
+    "chunk_id": 61,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      67,
+      61,
+      93
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Compliance",
+      "ACTION::Describe Rights",
+      "ACTION::manages Consent",
+      "Personal Data",
+      "Compliance Records",
+      "ACTION::subjectTo Government Restrictions",
+      "Government Restrictions",
+      "Data Fiduciary",
+      "Consent"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Compliance",
+      "Compliance Records"
+    ],
+    "N": [
+      "Lawful Purpose",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Enhanced Protection",
+      "Harm",
+      "Purpose Completion",
+      "Notification"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustEnsure Compliance\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 62,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      92,
+      65,
+      80
+    ],
+    "hits": [
+      "ACTION::Describe Rights",
+      "Consent Manager",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "ACTION::subjectTo Additional Obligations",
+      "ACTION::manages Consent",
+      "Additional Obligations",
+      "Compliance",
+      "Lawful Purpose",
+      "ACTION::Describe Purpose",
+      "ACTION::subjectTo Government Restrictions"
+    ],
+    "P": [
+      "Rights",
+      "Consent Manager",
+      "Consent",
+      "Withdraw Consent",
+      "Lawful Purpose"
+    ],
+    "N": [
+      "Revocable",
+      "Personal Data",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Consent Manager",
+      "Specific",
+      "Third Party Sharing",
+      "Informed",
+      "Unambiguous",
+      "Free",
+      "Data Principal"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Third Party Sharing requires Notice\n- Third Party Sharing requires Consent\n- Consent mustBe Free\n- Consent mustBe Specific\n- Consent mustBe Informed\n- Consent mustBe Unambiguous\n- Consent mustBe Revocable\n- Notice mustDescribe Rights\n- Consent Manager assists Data Principal\n- Consent Manager manages Consent\n- Data Principal hasRightTo Withdraw Consent"
+  },
+  {
+    "chunk_id": 63,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      70,
+      78,
+      85
+    ],
+    "hits": [
+      "Data Fiduciary",
+      "Personal Data",
+      "ACTION::subjectTo Additional Obligations",
+      "DEONTIC::subject to",
+      "Children Data",
+      "Sensitive Personal Data",
+      "ACTION::subjectTo Government Restrictions",
+      "Significant Data Fiduciary",
+      "ACTION::Describe Contact Information",
+      "Data Protection Officer"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Personal Data",
+      "Sensitive Personal Data"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Lawful Purpose",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Grievance Redressal",
+      "Consent",
+      "Notice",
+      "Enhanced Protection",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Purpose Completion",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 64,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      79,
+      68,
+      64
+    ],
+    "hits": [
+      "Personal Data",
+      "ACTION::Describe Contact Information",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "Contact Information",
+      "Significant Data Fiduciary",
+      "Data Protection Officer",
+      "Compliance Records",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Breach"
+    ],
+    "P": [
+      "Personal Data",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "Contact Information",
+      "Data Breach"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Lawful Purpose",
+      "Compliance Records",
+      "Consent",
+      "Grievance Redressal",
+      "Notice",
+      "Enhanced Protection",
+      "Data Fiduciary",
+      "Security Safeguards",
+      "Penalty",
+      "Harm",
+      "Purpose Completion",
+      "Notification",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm\n- Notice mustDescribe Contact Information"
+  },
+  {
+    "chunk_id": 65,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      62,
+      1848,
+      685
+    ],
+    "hits": [
+      "Third Party Sharing",
+      "ACTION::subjectTo Government Restrictions",
+      "Government Restrictions",
+      "Additional Obligations",
+      "ACTION::Describe Rights",
+      "ACTION::manages Consent",
+      "ACTION::subjectTo Additional Obligations",
+      "Consent Manager",
+      "Unambiguous",
+      "Nominee"
+    ],
+    "P": [
+      "Third Party Sharing",
+      "Government Restrictions",
+      "Purpose Limitation",
+      "Additional Obligations",
+      "Compliance"
+    ],
+    "N": [
+      "Significant Data Fiduciary",
+      "Consent",
+      "Notice",
+      "Cross Border Transfer",
+      "Processing"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Cross Border Transfer subjectTo Government Restrictions\n- Third Party Sharing requires Notice\n- Third Party Sharing requires Consent\n- Purpose Limitation appliesTo Processing"
+  },
+  {
+    "chunk_id": 66,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      61,
+      72,
+      66
+    ],
+    "hits": [
+      "ACTION::subjectTo Government Restrictions",
+      "Compliance",
+      "ACTION::Ensure Compliance",
+      "Government Restrictions",
+      "Compliance Records",
+      "ACTION::Describe Rights",
+      "ACTION::Implement Security Safeguards",
+      "ACTION::Maintain Compliance Records",
+      "Security Safeguards",
+      "ACTION::subjectTo Additional Obligations"
+    ],
+    "P": [
+      "Government Restrictions",
+      "Compliance",
+      "Compliance Records",
+      "Lawful Purpose",
+      "Security Safeguards"
+    ],
+    "N": [
+      "Data Fiduciary",
+      "Cross Border Transfer",
+      "Personal Data",
+      "Significant Data Fiduciary"
+    ],
+    "verdict": "pass",
+    "llm_reply": "PASS",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustMaintain Compliance Records\n- Cross Border Transfer subjectTo Government Restrictions"
+  },
+  {
+    "chunk_id": 67,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      68,
+      99,
+      71
+    ],
+    "hits": [
+      "Compliance",
+      "ACTION::appliesTo Processing",
+      "ACTION::Ensure Compliance",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "ACTION::subjectTo Government Restrictions",
+      "ACTION::subjectTo Additional Obligations",
+      "Compliance Records",
+      "ACTION::appliesTo Retention",
+      "Data Fiduciary",
+      "Government Restrictions"
+    ],
+    "P": [
+      "Compliance",
+      "Compliance Records",
+      "Lawful Purpose",
+      "Processing",
+      "Security Safeguards"
+    ],
+    "N": [
+      "Data Fiduciary",
+      "Purpose Limitation",
+      "Personal Data",
+      "Significant Data Fiduciary"
+    ],
+    "verdict": "pass",
+    "llm_reply": "PASS",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustMaintain Compliance Records\n- Purpose Limitation appliesTo Processing"
+  },
+  {
+    "chunk_id": 68,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      68,
+      82,
+      90
+    ],
+    "hits": [
+      "Personal Data",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer",
+      "ACTION::subjectTo Government Restrictions",
+      "Security Safeguards",
+      "ACTION::Implement Security Safeguards",
+      "ACTION::Describe Rights",
+      "ACTION::Describe Contact Information"
+    ],
+    "P": [
+      "Personal Data",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "Data Breach",
+      "Significant Data Fiduciary"
+    ],
+    "N": [
+      "Compliance",
+      "Data Protection Officer",
+      "Penalty",
+      "Consent",
+      "Notice",
+      "Security Safeguards",
+      "Risk Assessment",
+      "Purpose Completion",
+      "Notification",
+      "Additional Obligations",
+      "Grievance Redressal",
+      "Data Fiduciary",
+      "Compliance Records",
+      "Data Breach",
+      "Data Accuracy",
+      "Lawful Purpose",
+      "Enhanced Protection",
+      "Harm",
+      "Data Audit"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 69,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      71,
+      69,
+      72
+    ],
+    "hits": [
+      "Personal Data",
+      "Data Fiduciary",
+      "Third Party Sharing",
+      "ACTION::Describe Contact Information",
+      "Sensitive Personal Data",
+      "ACTION::subjectTo Additional Obligations",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Audit",
+      "Children Data",
+      "Data Breach"
+    ],
+    "P": [
+      "Personal Data",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Lawful Purpose",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Consent",
+      "Grievance Redressal",
+      "Notice",
+      "Enhanced Protection",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Purpose Completion",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 70,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      70,
+      79,
+      69
+    ],
+    "hits": [
+      "Personal Data",
+      "ACTION::Describe Purpose",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "ACTION::Describe Contact Information",
+      "Lawful Purpose",
+      "Compliance Records",
+      "Purpose",
+      "ACTION::subjectTo Government Restrictions",
+      "ACTION::subjectTo Additional Obligations"
+    ],
+    "P": [
+      "Personal Data",
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "Purpose",
+      "Purpose Completion"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Personal Data",
+      "Lawful Purpose",
+      "Compliance Records",
+      "Consent",
+      "Grievance Redressal",
+      "Notice",
+      "Enhanced Protection",
+      "Security Safeguards",
+      "Penalty",
+      "Purpose Completion",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Notice mustDescribe Purpose"
+  },
+  {
+    "chunk_id": 71,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      71,
+      69,
+      70
+    ],
+    "hits": [
+      "ACTION::subjectTo Additional Obligations",
+      "Data Fiduciary",
+      "Additional Obligations",
+      "Compliance Records",
+      "Compliance",
+      "ACTION::Describe Contact Information",
+      "Personal Data",
+      "ACTION::Ensure Compliance",
+      "ACTION::Maintain Compliance Records",
+      "ACTION::Conduct Data Audit"
+    ],
+    "P": [
+      "Additional Obligations",
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Compliance"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Data Protection Officer",
+      "Significant Data Fiduciary",
+      "Compliance Records",
+      "Consent",
+      "Grievance Redressal",
+      "Notice",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 72,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      72,
+      69,
+      83
+    ],
+    "hits": [
+      "Data Fiduciary",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "ACTION::Describe Purpose",
+      "ACTION::subjectTo Government Restrictions",
+      "Compliance",
+      "Personal Data",
+      "ACTION::Implement Security Safeguards",
+      "Data Breach",
+      "Security Safeguards"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Complaint",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Grievance Redressal",
+      "Consent",
+      "Notice",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Appeal",
+      "Directions",
+      "Data Breach",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty"
+  },
+  {
+    "chunk_id": 73,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      73,
+      71,
+      81
+    ],
+    "hits": [
+      "Data Fiduciary",
+      "Personal Data",
+      "ACTION::Describe Contact Information",
+      "Data Audit",
+      "Third Party Sharing",
+      "ACTION::Conduct Data Audit",
+      "Significant Data Fiduciary",
+      "Sensitive Personal Data",
+      "Children Data",
+      "ACTION::Appoint Data Protection Officer"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Personal Data",
+      "Sensitive Personal Data"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Lawful Purpose",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Grievance Redressal",
+      "Consent",
+      "Notice",
+      "Enhanced Protection",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Purpose Completion",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 74,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      74,
+      85,
+      79
+    ],
+    "hits": [
+      "Compliance Records",
+      "ACTION::Maintain Compliance Records",
+      "Data Fiduciary",
+      "Data Breach",
+      "Sensitive Personal Data",
+      "ACTION::Conduct Data Audit",
+      "Data Audit",
+      "Compliance",
+      "ACTION::Ensure Compliance",
+      "Government Restrictions"
+    ],
+    "P": [
+      "Compliance Records",
+      "Compliance",
+      "Data Audit",
+      "Data Fiduciary",
+      "Significant Data Fiduciary"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Data Protection Officer",
+      "Significant Data Fiduciary",
+      "Compliance Records",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 75,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      75,
+      91,
+      76
+    ],
+    "hits": [
+      "Data Breach",
+      "ACTION::Conduct Data Audit",
+      "Data Audit",
+      "Data Fiduciary",
+      "ACTION::Appoint Data Protection Officer",
+      "Sensitive Personal Data",
+      "Personal Data",
+      "ACTION::Notify Data Breach",
+      "Data Protection Officer",
+      "Compliance Records"
+    ],
+    "P": [
+      "Data Breach",
+      "Data Audit",
+      "Data Protection Officer",
+      "Data Fiduciary",
+      "Significant Data Fiduciary"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Data Protection Officer",
+      "Significant Data Fiduciary",
+      "Compliance Records",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Harm",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Notification",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 76,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      76,
+      92,
+      85
+    ],
+    "hits": [
+      "Data Fiduciary",
+      "ACTION::Appoint Data Protection Officer",
+      "Sensitive Personal Data",
+      "Data Breach",
+      "ACTION::Conduct Data Audit",
+      "Compliance Records",
+      "Data Protection Officer",
+      "Data Audit",
+      "ACTION::Provide Grievance Redressal",
+      "Compliance"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Complaint",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Grievance Redressal",
+      "Consent",
+      "Notice",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Appeal",
+      "Directions",
+      "Data Breach",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty"
+  },
+  {
+    "chunk_id": 77,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      69,
+      88,
+      73
+    ],
+    "hits": [
+      "ACTION::Describe Purpose",
+      "ACTION::subjectTo Additional Obligations",
+      "Purpose Limitation",
+      "Data Fiduciary",
+      "ACTION::subjectTo Government Restrictions",
+      "Compliance Records",
+      "ACTION::appliesTo Processing",
+      "Purpose",
+      "DEONTIC::subject to",
+      "Significant Data Fiduciary"
+    ],
+    "P": [
+      "Purpose",
+      "Purpose Completion",
+      "Lawful Purpose",
+      "Additional Obligations",
+      "Purpose Limitation"
+    ],
+    "N": [
+      "Processing",
+      "Notice",
+      "Personal Data",
+      "Significant Data Fiduciary"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Notice mustDescribe Purpose\n- Purpose Limitation appliesTo Processing"
+  },
+  {
+    "chunk_id": 78,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      88,
+      70,
+      85
+    ],
+    "hits": [
+      "ACTION::requires Consent",
+      "ACTION::manages Consent",
+      "Consent",
+      "ACTION::Obtain Consent",
+      "ACTION::requires Parental Consent",
+      "Parental Consent",
+      "ACTION::subjectTo Additional Obligations",
+      "Personal Data",
+      "Withdraw Consent",
+      "Consent Manager"
+    ],
+    "P": [
+      "Consent",
+      "Parental Consent",
+      "Withdraw Consent",
+      "Consent Manager",
+      "Additional Obligations"
+    ],
+    "N": [
+      "Revocable",
+      "Significant Data Fiduciary",
+      "Consent",
+      "Data Fiduciary",
+      "Consent Manager",
+      "Children Data",
+      "Specific",
+      "Third Party Sharing",
+      "Informed",
+      "Unambiguous",
+      "Free",
+      "Data Principal"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustObtain Consent\n- Third Party Sharing requires Consent\n- Consent mustBe Free\n- Consent mustBe Specific\n- Consent mustBe Informed\n- Consent mustBe Unambiguous\n- Consent mustBe Revocable\n- Consent Manager assists Data Principal\n- Consent Manager manages Consent\n- Children Data requires Parental Consent\n- Data Principal hasRightTo Withdraw Consent"
+  },
+  {
+    "chunk_id": 79,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      79,
+      2280,
+      80
+    ],
+    "hits": [
+      "Data Fiduciary",
+      "Third Party Sharing",
+      "Sensitive Personal Data",
+      "ACTION::Be Informed",
+      "Personal Data",
+      "ACTION::Describe Contact Information",
+      "ACTION::Conduct Data Audit",
+      "Data Breach",
+      "Data Audit",
+      "ACTION::Notify Data Breach"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Third Party Sharing",
+      "Sensitive Personal Data"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Grievance Redressal",
+      "Consent",
+      "Notice",
+      "Enhanced Protection",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Third Party Sharing requires Notice\n- Third Party Sharing requires Consent"
+  },
+  {
+    "chunk_id": 80,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      76,
+      92,
+      80
+    ],
+    "hits": [
+      "Security Safeguards",
+      "ACTION::Implement Security Safeguards",
+      "ACTION::requires Enhanced Protection",
+      "Enhanced Protection",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "Data Protection Board",
+      "ACTION::subjectTo Government Restrictions",
+      "Third Party Sharing",
+      "ACTION::mayBeFiledWith Data Protection Board"
+    ],
+    "P": [
+      "Security Safeguards",
+      "Enhanced Protection",
+      "Data Protection Board",
+      "Data Protection Officer",
+      "Data Audit"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Sensitive Personal Data",
+      "Penalty",
+      "Appeal",
+      "Directions",
+      "Grievance"
+    ],
+    "verdict": "pass",
+    "llm_reply": "PASS",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary subjectTo Penalty\n- Sensitive Personal Data requires Enhanced Protection"
+  },
+  {
+    "chunk_id": 81,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      81,
+      76,
+      70
+    ],
+    "hits": [
+      "Compliance Records",
+      "Data Fiduciary",
+      "ACTION::subjectTo Government Restrictions",
+      "Government Restrictions",
+      "ACTION::Maintain Compliance Records",
+      "Additional Obligations",
+      "ACTION::requires Consent",
+      "ACTION::Describe Contact Information",
+      "ACTION::subjectTo Additional Obligations",
+      "Compliance"
+    ],
+    "P": [
+      "Compliance Records",
+      "Compliance",
+      "Data Audit",
+      "Data Fiduciary",
+      "Significant Data Fiduciary"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Data Protection Officer",
+      "Significant Data Fiduciary",
+      "Compliance Records",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 82,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      83,
+      82,
+      71
+    ],
+    "hits": [
+      "Data Fiduciary",
+      "ACTION::Appoint Data Protection Officer",
+      "Cross Border Transfer",
+      "ACTION::Maintain Compliance Records",
+      "Compliance Records",
+      "Data Protection Officer",
+      "Contact Information",
+      "Data Audit",
+      "Data Breach",
+      "ACTION::Describe Contact Information"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Complaint",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Grievance Redressal",
+      "Consent",
+      "Notice",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Appeal",
+      "Directions",
+      "Data Breach",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty"
+  },
+  {
+    "chunk_id": 83,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      83,
+      66,
+      72
+    ],
+    "hits": [
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Audit",
+      "Data Fiduciary",
+      "Sensitive Personal Data",
+      "Data Breach",
+      "ACTION::Conduct Data Audit",
+      "ACTION::Implement Security Safeguards",
+      "Compliance Records"
+    ],
+    "P": [
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Audit",
+      "Data Breach",
+      "Enhanced Protection"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Sensitive Personal Data",
+      "Penalty",
+      "Harm",
+      "Appeal",
+      "Directions",
+      "Notification",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Sensitive Personal Data requires Enhanced Protection\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 84,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      1830,
+      84,
+      85
+    ],
+    "hits": [
+      "ACTION::appliesTo Retention",
+      "Retention",
+      "ACTION::Maintain Compliance Records",
+      "Data Fiduciary",
+      "Compliance Records",
+      "Data Audit",
+      "Personal Data",
+      "ACTION::Conduct Data Audit",
+      "Significant Data Fiduciary",
+      "Data Breach"
+    ],
+    "P": [
+      "Retention",
+      "Erasure",
+      "Compliance Records",
+      "Compliance",
+      "Data Fiduciary"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Storage Limitation",
+      "Significant Data Fiduciary",
+      "Compliance Records",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Penalty",
+      "Data Breach",
+      "Data Principal"
+    ],
+    "verdict": "pass",
+    "llm_reply": "PASS",
+    "triples_text": "- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Principal hasRightTo Erasure\n- Data Principal hasRightTo Grievance Redressal\n- Storage Limitation appliesTo Retention"
+  },
+  {
+    "chunk_id": 85,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      85,
+      77,
+      73
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Fiduciary",
+      "ACTION::Describe Contact Information",
+      "Compliance Records",
+      "ACTION::subjectTo Additional Obligations",
+      "Significant Data Fiduciary",
+      "Children Data",
+      "Data Breach",
+      "ACTION::Maintain Compliance Records"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Fiduciary",
+      "Significant Data Fiduciary"
+    ],
+    "N": [
+      "Compliance",
+      "Data Protection Officer",
+      "Penalty",
+      "Consent",
+      "Notice",
+      "Security Safeguards",
+      "Risk Assessment",
+      "Purpose Completion",
+      "Notification",
+      "Additional Obligations",
+      "Grievance Redressal",
+      "Data Fiduciary",
+      "Compliance Records",
+      "Data Breach",
+      "Data Accuracy",
+      "Lawful Purpose",
+      "Enhanced Protection",
+      "Harm",
+      "Data Audit"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 86,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      58,
+      82,
+      90
+    ],
+    "hits": [
+      "ACTION::Appoint Data Protection Officer",
+      "Compliance Records",
+      "Contact Information",
+      "Data Protection Officer",
+      "Data Fiduciary",
+      "Personal Data",
+      "ACTION::Describe Contact Information",
+      "ACTION::Maintain Compliance Records",
+      "ACTION::manages Consent",
+      "ACTION::subjectTo Additional Obligations"
+    ],
+    "P": [
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Audit",
+      "Compliance Records",
+      "Compliance"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Penalty",
+      "Appeal",
+      "Directions",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 87,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      60,
+      32,
+      58
+    ],
+    "hits": [
+      "ACTION::mayBeFiledAgainst Board Decision",
+      "Data Protection Officer",
+      "Contact Information",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Board",
+      "ACTION::mayBeFiledWith Data Protection Board",
+      "Access",
+      "ACTION::RightTo Access",
+      "Compliance",
+      "Compliance Records"
+    ],
+    "P": [
+      "Board Decision",
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Breach",
+      "Contact Information"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Notice",
+      "Penalty",
+      "Harm",
+      "Directions",
+      "Appeal",
+      "Notification",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Notice mustDescribe Contact Information\n- Appeal mayBeFiledAgainst Board Decision\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 88,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      90,
+      70,
+      63
+    ],
+    "hits": [
+      "ACTION::Conduct Data Audit",
+      "Data Fiduciary",
+      "Data Audit",
+      "ACTION::Appoint Data Protection Officer",
+      "Compliance Records",
+      "ACTION::Describe Contact Information",
+      "Contact Information",
+      "Personal Data",
+      "ACTION::Provide Grievance Redressal",
+      "Data Breach"
+    ],
+    "P": [
+      "Data Audit",
+      "Data Breach",
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Protection Officer"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Data Protection Officer",
+      "Significant Data Fiduciary",
+      "Compliance Records",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Harm",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Notification",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 89,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      89,
+      76,
+      91
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Data Fiduciary",
+      "ACTION::Appoint Data Protection Officer",
+      "Compliance Records",
+      "ACTION::Conduct Data Audit",
+      "Data Audit",
+      "Data Protection Officer",
+      "ACTION::Maintain Compliance Records",
+      "ACTION::requires Age Verification",
+      "Personal Data"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Fiduciary",
+      "Significant Data Fiduciary"
+    ],
+    "N": [
+      "Compliance",
+      "Data Protection Officer",
+      "Penalty",
+      "Consent",
+      "Notice",
+      "Security Safeguards",
+      "Risk Assessment",
+      "Purpose Completion",
+      "Notification",
+      "Additional Obligations",
+      "Grievance Redressal",
+      "Data Fiduciary",
+      "Compliance Records",
+      "Data Breach",
+      "Data Accuracy",
+      "Lawful Purpose",
+      "Enhanced Protection",
+      "Harm",
+      "Data Audit"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 90,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      83,
+      88,
+      90
+    ],
+    "hits": [
+      "Withdraw Consent",
+      "ACTION::RightTo Withdraw Consent",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Fiduciary",
+      "Data Breach",
+      "ACTION::manages Consent",
+      "Sensitive Personal Data",
+      "ACTION::Conduct Data Audit",
+      "Data Audit",
+      "ACTION::Obtain Consent"
+    ],
+    "P": [
+      "Withdraw Consent",
+      "Consent",
+      "Consent Manager",
+      "Rights",
+      "Data Protection Officer"
+    ],
+    "N": [
+      "Revocable",
+      "Significant Data Fiduciary",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Consent Manager",
+      "Specific",
+      "Third Party Sharing",
+      "Informed",
+      "Unambiguous",
+      "Free",
+      "Data Principal"
+    ],
+    "verdict": "pass",
+    "llm_reply": "PASS",
+    "triples_text": "- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Third Party Sharing requires Notice\n- Third Party Sharing requires Consent\n- Consent mustBe Free\n- Consent mustBe Specific\n- Consent mustBe Informed\n- Consent mustBe Unambiguous\n- Consent mustBe Revocable\n- Notice mustDescribe Rights\n- Consent Manager assists Data Principal\n- Consent Manager manages Consent\n- Data Principal hasRightTo Withdraw Consent"
+  },
+  {
+    "chunk_id": 91,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      91,
+      75,
+      76
+    ],
+    "hits": [
+      "Data Breach",
+      "ACTION::Conduct Data Audit",
+      "Data Audit",
+      "Withdraw Consent",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Fiduciary",
+      "ACTION::RightTo Withdraw Consent",
+      "Sensitive Personal Data",
+      "ACTION::requires Consent",
+      "ACTION::mayBeFiledWith Data Protection Board"
+    ],
+    "P": [
+      "Data Breach",
+      "Data Audit",
+      "Data Protection Officer",
+      "Data Fiduciary",
+      "Withdraw Consent"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Significant Data Fiduciary",
+      "Compliance Records",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Harm",
+      "Penalty",
+      "Notification",
+      "Data Breach",
+      "Data Principal"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm\n- Data Principal hasRightTo Grievance Redressal\n- Data Principal hasRightTo Withdraw Consent"
+  },
+  {
+    "chunk_id": 92,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      92,
+      85,
+      76
+    ],
+    "hits": [
+      "Data Fiduciary",
+      "ACTION::Appoint Data Protection Officer",
+      "Sensitive Personal Data",
+      "Data Breach",
+      "ACTION::Conduct Data Audit",
+      "Compliance Records",
+      "Data Protection Officer",
+      "Data Audit",
+      "ACTION::Provide Grievance Redressal",
+      "Compliance"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Compliance",
+      "Additional Obligations",
+      "Complaint",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Grievance Redressal",
+      "Consent",
+      "Notice",
+      "Security Safeguards",
+      "Penalty",
+      "Risk Assessment",
+      "Data Audit",
+      "Appeal",
+      "Directions",
+      "Data Breach",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty"
+  },
+  {
+    "chunk_id": 93,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      93,
+      900,
+      591
+    ],
+    "hits": [
+      "Compliance",
+      "ACTION::subjectTo Government Restrictions",
+      "Government Restrictions",
+      "ACTION::Ensure Compliance",
+      "Compliance Records",
+      "Parental Consent",
+      "ACTION::requires Consent",
+      "Consent",
+      "Withdraw Consent",
+      "ACTION::manages Consent"
+    ],
+    "P": [
+      "Compliance",
+      "Compliance Records",
+      "Lawful Purpose",
+      "Government Restrictions",
+      "Purpose Limitation"
+    ],
+    "N": [
+      "Personal Data",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Cross Border Transfer",
+      "Processing"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustMaintain Compliance Records\n- Cross Border Transfer subjectTo Government Restrictions\n- Purpose Limitation appliesTo Processing"
+  },
+  {
+    "chunk_id": 94,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      46,
+      37,
+      49
+    ],
+    "hits": [
+      "Grievance",
+      "ACTION::Provide Grievance Redressal",
+      "Grievance Redressal",
+      "ACTION::RightTo Grievance Redressal",
+      "ACTION::handles Grievance",
+      "ACTION::requires Notice",
+      "Compliance",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer",
+      "Compliance Records"
+    ],
+    "P": [
+      "Grievance",
+      "Grievance Redressal",
+      "Notice",
+      "Compliance",
+      "Compliance Records"
+    ],
+    "N": [
+      "Data Protection Board",
+      "Rights",
+      "Purpose",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Third Party Sharing",
+      "Contact Information",
+      "Data Principal"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustMaintain Compliance Records\n- Notice mustDescribe Purpose\n- Notice mustDescribe Rights\n- Notice mustDescribe Contact Information\n- Third Party Sharing requires Notice\n- Data Principal hasRightTo Grievance Redressal"
+  },
+  {
+    "chunk_id": 95,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      59,
+      86,
+      87
+    ],
+    "hits": [
+      "Contact Information",
+      "ACTION::mayBeFiledAgainst Board Decision",
+      "Risk Assessment",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "DEONTIC::subject to",
+      "Compliance",
+      "Data Fiduciary",
+      "ACTION::Implement Security Safeguards",
+      "ACTION::Conduct Risk Assessment"
+    ],
+    "P": [
+      "Contact Information",
+      "Board Decision",
+      "Risk Assessment",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Notice",
+      "Penalty",
+      "Appeal",
+      "Directions",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Notice mustDescribe Contact Information\n- Appeal mayBeFiledAgainst Board Decision"
+  },
+  {
+    "chunk_id": 96,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      59,
+      87,
+      1104
+    ],
+    "hits": [
+      "Grievance",
+      "ACTION::Provide Grievance Redressal",
+      "ACTION::RightTo Grievance Redressal",
+      "Contact Information",
+      "ACTION::handles Grievance",
+      "Grievance Redressal",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "Complaint",
+      "Data Breach"
+    ],
+    "P": [
+      "Grievance",
+      "Grievance Redressal",
+      "Contact Information",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Data Protection Board",
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Notice",
+      "Penalty",
+      "Appeal",
+      "Directions",
+      "Data Principal",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary subjectTo Penalty\n- Notice mustDescribe Contact Information\n- Data Principal hasRightTo Grievance Redressal"
+  },
+  {
+    "chunk_id": 97,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      104,
+      100,
+      99
+    ],
+    "hits": [
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer",
+      "Security Safeguards",
+      "ACTION::subjectTo Government Restrictions",
+      "Data Fiduciary",
+      "Compliance",
+      "ACTION::manages Consent",
+      "ACTION::Implement Security Safeguards",
+      "Consent Manager",
+      "Government Restrictions"
+    ],
+    "P": [
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Breach",
+      "Data Audit",
+      "Security Safeguards"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Penalty",
+      "Harm",
+      "Appeal",
+      "Directions",
+      "Notification",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 98,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      3438,
+      1076,
+      98
+    ],
+    "hits": [
+      "Security Safeguards",
+      "ACTION::Implement Security Safeguards",
+      "Data Protection Officer",
+      "Sensitive Personal Data",
+      "ACTION::Appoint Data Protection Officer",
+      "Enhanced Protection",
+      "ACTION::requires Enhanced Protection",
+      "ACTION::mayBeFiledWith Data Protection Board",
+      "Compliance",
+      "ACTION::subjectTo Government Restrictions"
+    ],
+    "P": [
+      "Security Safeguards",
+      "Enhanced Protection",
+      "Data Protection Board",
+      "Data Protection Officer",
+      "Data Breach"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Sensitive Personal Data",
+      "Penalty",
+      "Harm",
+      "Appeal",
+      "Directions",
+      "Notification",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Sensitive Personal Data requires Enhanced Protection\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 99,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      575,
+      103,
+      99
+    ],
+    "hits": [
+      "Compliance",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer",
+      "ACTION::Ensure Compliance",
+      "Security Safeguards",
+      "ACTION::Implement Security Safeguards",
+      "Sensitive Personal Data",
+      "Compliance Records",
+      "Personal Data",
+      "Data Protection Board"
+    ],
+    "P": [
+      "Compliance",
+      "Compliance Records",
+      "Lawful Purpose",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Personal Data",
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Penalty",
+      "Appeal",
+      "Directions",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Personal Data mustBeProcessedFor Lawful Purpose\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 100,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      100,
+      109,
+      106
+    ],
+    "hits": [
+      "Third Party Sharing",
+      "Compliance",
+      "Additional Obligations",
+      "ACTION::Ensure Compliance",
+      "Personal Data",
+      "ACTION::subjectTo Additional Obligations",
+      "Compliance Records",
+      "ACTION::subjectTo Government Restrictions",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer"
+    ],
+    "P": [
+      "Third Party Sharing",
+      "Compliance",
+      "Compliance Records",
+      "Lawful Purpose",
+      "Additional Obligations"
+    ],
+    "N": [
+      "Personal Data",
+      "Significant Data Fiduciary",
+      "Consent",
+      "Data Fiduciary",
+      "Notice"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustMaintain Compliance Records\n- Third Party Sharing requires Notice\n- Third Party Sharing requires Consent"
+  },
+  {
+    "chunk_id": 101,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      101,
+      105,
+      4
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Protection Officer",
+      "ACTION::Describe Contact Information",
+      "Data Fiduciary",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Breach",
+      "Compliance Records",
+      "Data Protection Board",
+      "Data Audit"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Fiduciary",
+      "Data Protection Officer"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Lawful Purpose",
+      "Compliance Records",
+      "Significant Data Fiduciary",
+      "Consent",
+      "Data Fiduciary",
+      "Enhanced Protection",
+      "Notice",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Harm",
+      "Penalty",
+      "Purpose Completion",
+      "Notification",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 102,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      102,
+      559,
+      496
+    ],
+    "hits": [
+      "Third Party Sharing",
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Fiduciary",
+      "Security Safeguards",
+      "Compliance Records",
+      "ACTION::subjectTo Government Restrictions"
+    ],
+    "P": [
+      "Third Party Sharing",
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Fiduciary"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Lawful Purpose",
+      "Compliance Records",
+      "Consent",
+      "Data Fiduciary",
+      "Notice",
+      "Enhanced Protection",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Harm",
+      "Penalty",
+      "Purpose Completion",
+      "Notification",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Third Party Sharing requires Notice\n- Third Party Sharing requires Consent\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 103,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      103,
+      1076,
+      575
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Security Safeguards",
+      "ACTION::subjectTo Government Restrictions",
+      "Government Restrictions",
+      "ACTION::Implement Security Safeguards",
+      "Compliance",
+      "Data Protection Officer",
+      "Rights",
+      "ACTION::Describe Rights"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Fiduciary",
+      "Security Safeguards"
+    ],
+    "N": [
+      "Data Accuracy",
+      "Lawful Purpose",
+      "Compliance Records",
+      "Consent",
+      "Data Fiduciary",
+      "Enhanced Protection",
+      "Notice",
+      "Grievance Redressal",
+      "Security Safeguards",
+      "Harm",
+      "Penalty",
+      "Purpose Completion",
+      "Notification",
+      "Data Breach"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 104,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      104,
+      2730,
+      99
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Compliance",
+      "ACTION::Ensure Compliance",
+      "Personal Data",
+      "Security Safeguards",
+      "ACTION::Implement Security Safeguards",
+      "Compliance Records",
+      "ACTION::requires Consent",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Compliance",
+      "Compliance Records"
+    ],
+    "N": [
+      "Lawful Purpose",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Enhanced Protection",
+      "Harm",
+      "Purpose Completion",
+      "Notification"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustEnsure Compliance\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 105,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      105,
+      101,
+      100
+    ],
+    "hits": [
+      "ACTION::manages Consent",
+      "Consent",
+      "ACTION::Obtain Consent",
+      "ACTION::requires Consent",
+      "Parental Consent",
+      "Consent Manager",
+      "Withdraw Consent",
+      "Sensitive Personal Data",
+      "ACTION::requires Parental Consent",
+      "ACTION::Appoint Data Protection Officer"
+    ],
+    "P": [
+      "Consent",
+      "Consent Manager",
+      "Parental Consent",
+      "Withdraw Consent",
+      "Sensitive Personal Data"
+    ],
+    "N": [
+      "Revocable",
+      "Consent",
+      "Data Fiduciary",
+      "Enhanced Protection",
+      "Consent Manager",
+      "Children Data",
+      "Specific",
+      "Third Party Sharing",
+      "Informed",
+      "Unambiguous",
+      "Free",
+      "Data Principal"
+    ],
+    "verdict": "pass",
+    "llm_reply": "PASS",
+    "triples_text": "- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustObtain Consent\n- Third Party Sharing requires Consent\n- Consent mustBe Free\n- Consent mustBe Specific\n- Consent mustBe Informed\n- Consent mustBe Unambiguous\n- Consent mustBe Revocable\n- Consent Manager assists Data Principal\n- Consent Manager manages Consent\n- Children Data requires Parental Consent\n- Data Principal hasRightTo Withdraw Consent"
+  },
+  {
+    "chunk_id": 106,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      106,
+      107,
+      109
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Fiduciary",
+      "Compliance Records",
+      "ACTION::Describe Contact Information",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "ACTION::Maintain Compliance Records",
+      "ACTION::subjectTo Additional Obligations"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Fiduciary",
+      "Significant Data Fiduciary"
+    ],
+    "N": [
+      "Compliance",
+      "Data Protection Officer",
+      "Penalty",
+      "Consent",
+      "Notice",
+      "Security Safeguards",
+      "Risk Assessment",
+      "Purpose Completion",
+      "Notification",
+      "Additional Obligations",
+      "Grievance Redressal",
+      "Data Fiduciary",
+      "Compliance Records",
+      "Data Breach",
+      "Data Accuracy",
+      "Lawful Purpose",
+      "Enhanced Protection",
+      "Harm",
+      "Data Audit"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 107,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      94,
+      100,
+      109
+    ],
+    "hits": [
+      "ACTION::Provide Grievance Redressal",
+      "Grievance Redressal",
+      "Grievance",
+      "ACTION::handles Grievance",
+      "ACTION::RightTo Grievance Redressal",
+      "Compliance Records",
+      "ACTION::Maintain Compliance Records",
+      "Additional Obligations",
+      "ACTION::requires Notice",
+      "ACTION::Provide Notice"
+    ],
+    "P": [
+      "Grievance Redressal",
+      "Grievance",
+      "Compliance Records",
+      "Compliance",
+      "Data Audit"
+    ],
+    "N": [
+      "Data Fiduciary",
+      "Data Principal",
+      "Data Protection Board",
+      "Significant Data Fiduciary"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustMaintain Compliance Records\n- Data Principal hasRightTo Grievance Redressal"
+  },
+  {
+    "chunk_id": 108,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      109,
+      108,
+      97
+    ],
+    "hits": [
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "Compliance Records",
+      "Security Safeguards",
+      "ACTION::manages Consent",
+      "Compliance",
+      "Sensitive Personal Data",
+      "ACTION::requires Enhanced Protection",
+      "ACTION::Describe Rights",
+      "ACTION::subjectTo Government Restrictions"
+    ],
+    "P": [
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Audit",
+      "Data Breach",
+      "Compliance Records"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Penalty",
+      "Harm",
+      "Appeal",
+      "Directions",
+      "Notification",
+      "Grievance"
+    ],
+    "verdict": "pass",
+    "llm_reply": "PASS",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm"
+  },
+  {
+    "chunk_id": 109,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      109,
+      105,
+      108
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Breach",
+      "Compliance Records",
+      "Personal Data",
+      "Security Safeguards",
+      "ACTION::Implement Security Safeguards",
+      "Data Fiduciary",
+      "ACTION::Notify Data Breach"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Lawful Purpose",
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Enhanced Protection",
+      "Penalty",
+      "Harm",
+      "Appeal",
+      "Directions",
+      "Purpose Completion",
+      "Notification",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Sensitive Personal Data requires Enhanced Protection\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty"
+  },
+  {
+    "chunk_id": 110,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      107,
+      110,
+      109
+    ],
+    "hits": [
+      "Additional Obligations",
+      "ACTION::subjectTo Additional Obligations",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "ACTION::requires Enhanced Protection",
+      "Compliance",
+      "Third Party Sharing",
+      "Compliance Records",
+      "Enhanced Protection",
+      "Security Safeguards",
+      "ACTION::Ensure Compliance"
+    ],
+    "P": [
+      "Additional Obligations",
+      "Compliance",
+      "Lawful Purpose",
+      "Enhanced Protection",
+      "Security Safeguards"
+    ],
+    "N": [
+      "Data Fiduciary",
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Significant Data Fiduciary"
+    ],
+    "verdict": "pass",
+    "llm_reply": "PASS",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustImplement Security Safeguards\n- Sensitive Personal Data requires Enhanced Protection"
+  },
+  {
+    "chunk_id": 111,
+    "filename": "Privacy_Policy_hdfc.pdf",
+    "source_corpus": "unknown",
+    "retrieved_chunks": [
+      3392,
+      110,
+      109
+    ],
+    "hits": [
+      "ACTION::Implement Security Safeguards",
+      "Security Safeguards",
+      "Enhanced Protection",
+      "Compliance",
+      "ACTION::Ensure Compliance",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "ACTION::requires Enhanced Protection",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "Data Protection Board"
+    ],
+    "P": [
+      "Security Safeguards",
+      "Enhanced Protection",
+      "Data Protection Board",
+      "Compliance",
+      "Compliance Records"
+    ],
+    "N": [
+      "Complaint",
+      "Significant Data Fiduciary",
+      "Data Fiduciary",
+      "Sensitive Personal Data",
+      "Penalty",
+      "Appeal",
+      "Directions",
+      "Grievance"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustEnsure Compliance\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty\n- Sensitive Personal Data requires Enhanced Protection"
+  }
+]

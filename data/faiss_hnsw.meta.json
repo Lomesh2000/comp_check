@@ -1,0 +1,11 @@
+{
+  "index_type": "IndexHNSWFlat",
+  "num_vectors": 3583,
+  "dimension": 384,
+  "m": 32,
+  "ef_construction": 200,
+  "ef_search_default": 16,
+  "build_time_seconds": 0.25,
+  "embed_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "source_chunks": "/workspaces/comp_check/data/chunks.json"
+}
