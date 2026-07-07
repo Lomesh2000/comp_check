@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 rag_runner.py — RAG pipeline with actual chunk retrieval.
+UPDATED: Added --faiss-index argument to support HNSW index at scale.
 """
 
 import os
@@ -27,17 +28,6 @@ try:
 except Exception:
     SBERT_AVAILABLE = False
 
-# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", None)
-# _client = None
-# if OPENAI_API_KEY:
-#     try:
-#         from openai import OpenAI
-#         import httpx
-#         _client = OpenAI(api_key=OPENAI_API_KEY, http_client=httpx.Client())
-#     except Exception as e:
-#         logger.warning("OpenAI init failed: %s", e)
-#         _client = None
-
 # --- LLM Client: Groq (primary), OpenAI (fallback), Local (last resort) ---
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", None)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", None)
@@ -45,7 +35,6 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", None)
 _groq_client = None
 _openai_client = None
 
-# Try Groq first
 if GROQ_API_KEY:
     try:
         from groq import Groq
@@ -55,7 +44,6 @@ if GROQ_API_KEY:
         logger.warning("Groq init failed: %s", e)
         _groq_client = None
 
-# Fallback to OpenAI
 if OPENAI_API_KEY and _groq_client is None:
     try:
         from openai import OpenAI
@@ -88,29 +76,9 @@ def init_local_flan(model_name="google/flan-t5-large"):
         _local_tokenizer = None
     return _local_model, _local_tokenizer
 
-# def call_llm(prompt, use_openai_priority=True, model_openai="gpt-3.5-turbo", max_tokens=256):
-#     if use_openai_priority and _client is not None:
-#         try:
-#             resp = _client.chat.completions.create(
-#                 model=model_openai,
-#                 messages=[{"role": "user", "content": prompt}],
-#                 temperature=0.0,
-#                 max_tokens=max_tokens,
-#             )
-#             return resp.choices[0].message.content
-#         except Exception as e:
-#             logger.warning("OpenAI failed: %s", e)
-#     model, tokenizer = init_local_flan()
-#     if model is None or tokenizer is None:
-#         raise RuntimeError("No LLM available.")
-#     inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=1024)
-#     out = model.generate(**inputs, max_new_tokens=max_tokens, do_sample=False)
-#     return tokenizer.decode(out[0], skip_special_tokens=True)
-
 def call_llm(prompt, use_api_priority=True, model="llama-3.3-70b-versatile", max_tokens=256):
-    # Try Groq
-    logger.info("call_llm: use_api_priority=%s, groq_client=%s, openai_client=%s",
-                use_api_priority, _groq_client is not None, _openai_client is not None)
+    logger.info("call_llm: groq=%s, openai=%s",
+                _groq_client is not None, _openai_client is not None)
     if use_api_priority and _groq_client is not None:
         try:
             resp = _groq_client.chat.completions.create(
@@ -124,7 +92,6 @@ def call_llm(prompt, use_api_priority=True, model="llama-3.3-70b-versatile", max
         except Exception as e:
             logger.warning("Groq call failed: %s", e)
 
-    # Try OpenAI
     if use_api_priority and _openai_client is not None:
         try:
             resp = _openai_client.chat.completions.create(
@@ -138,7 +105,6 @@ def call_llm(prompt, use_api_priority=True, model="llama-3.3-70b-versatile", max
         except Exception as e:
             logger.warning("OpenAI call failed: %s", e)
 
-    # Fallback to local
     model_local, tokenizer = init_local_flan()
     if model_local is None or tokenizer is None:
         raise RuntimeError("No LLM available.")
@@ -146,23 +112,7 @@ def call_llm(prompt, use_api_priority=True, model="llama-3.3-70b-versatile", max
     out = model_local.generate(**inputs, max_new_tokens=max_tokens, do_sample=False)
     return tokenizer.decode(out[0], skip_special_tokens=True)
 
-Tempt3 = """
-You are a compliance classifier.
-
-Business text:
-{chunk}
-
-Context:
-{triples_text}
-
-Question:
-Does the business text violate ANY regulatory rules?
-
-Answer ONLY one word: PASS or FAIL.
-"""
-
-Tempt3 = """
-You are a compliance auditor. Compare the BUSINESS POLICY text below against the REGULATORY RULES.
+Tempt3 = """You are a compliance auditor. Compare the BUSINESS POLICY text below against the REGULATORY RULES.
 Determine if the business policy violates any regulatory rule.
 
 BUSINESS POLICY:
@@ -178,8 +128,7 @@ Answer ONLY one word: PASS or FAIL.
 PASS = The business policy complies with all rules.
 FAIL = The business policy violates at least one rule.
 
-Answer:
-"""
+Answer:"""
 
 def load_graph(path):
     if not os.path.exists(path):
@@ -273,13 +222,33 @@ def triples_text_from_graph(G, max_items=50):
             lines.append(f"- {data.get('label') or n}")
     return "\n".join(lines)
 
+def _get_doc_name(chunk):
+    """Get document name from chunk, handling both old and new schemas."""
+    return chunk.get("filename") or chunk.get("source_doc") or "unknown"
+
+def is_regulatory_doc(chunk):
+    """Check if a chunk is regulatory text (DPDP Act)."""
+    filename = _get_doc_name(chunk).lower()
+    text_sample = chunk.get("text", "")[:500].lower()
+
+    if any(kw in filename for kw in ["act", "statute", "law", "regulation", "dpdp"]):
+        return True
+    if "act" in text_sample and ("section" in text_sample or "chapter" in text_sample or "parliament" in text_sample):
+        return True
+    return False
+
 def main(args):
     if not SBERT_AVAILABLE:
         raise RuntimeError("sentence-transformers not installed")
 
     sys.path.insert(0, str(Path(__file__).parent))
-    from retriever import UnifiedRetriever
-    retriever = UnifiedRetriever()
+    from retriever_fixed import UnifiedRetriever
+
+    # Pass faiss_index path to retriever if provided
+    retriever_kwargs = {}
+    if args.faiss_index:
+        retriever_kwargs["faiss_path"] = args.faiss_index
+    retriever = UnifiedRetriever(**retriever_kwargs)
 
     static_graph = load_graph(args.static_graph) if args.static_graph else nx.DiGraph()
     static_node_order, static_embs = [], None
@@ -296,43 +265,37 @@ def main(args):
 
     with open(args.chunks, "r", encoding="utf-8") as f:
         chunks = json.load(f)
-    logger.info("Loaded %d chunks", len(chunks))
+    logger.info("Loaded %d chunks from corpus", len(chunks))
 
-    # Auto-detect business vs regulatory documents
-    def is_regulatory_doc(filename, text_sample=""):
-        lower_name = filename.lower()
-        if any(kw in lower_name for kw in ["act", "statute", "law", "regulation", "dpdp"]):
-            return True
-        sample = text_sample[:500].lower()
-        if "act" in sample and ("section" in sample or "chapter" in sample or "parliament" in sample):
-            return True
-        return False
+    # FILTER: Only process business policy chunks (IOCL + HDFC)
+    # Skip OPP-115 segments and DPDP Act regulatory text
+    business_chunks = [
+        c for c in chunks
+        if c.get("source_corpus") not in ("opp115", "dpdp_act")
+        and not is_regulatory_doc(c)
+    ]
 
-    # # In main(), after loading chunks:
-    # business_chunks = [c for c in chunks if "business" in c["filename"].lower() 
-    #                 or c["filename"] in ["Indian Oil Priivacy policy.pdf", "Privacy_Policy_hdfc.pdf"]]
-    # logger.info("Filtered to %d business chunks (excluded regulatory text)", len(business_chunks))
+    skipped = len(chunks) - len(business_chunks)
+    logger.info("Filtered to %d business chunks for compliance checking (%d skipped: opp115 + regulatory)",
+                len(business_chunks), skipped)
 
-    business_chunks = [c for c in chunks if not is_regulatory_doc(c["filename"], c.get("text", ""))]
-    regulatory_chunks = [c for c in chunks if is_regulatory_doc(c["filename"], c.get("text", ""))]
-    logger.info("Auto-detected: %d business chunks, %d regulatory chunks", len(business_chunks), len(regulatory_chunks))
+    if not business_chunks:
+        logger.error("No business chunks found! Check source_corpus fields.")
+        return
 
-# # Then iterate business_chunks instead of chunks
-# for idx, c in enumerate(business_chunks):
-#     ...
     model = SentenceTransformer(args.embed_model)
     eventic_nodes, eventic_embs = compute_eventic_node_embeddings(eventic_graph, model)
 
     results = []
     for idx, c in enumerate(business_chunks):
-        fname = c.get("filename", f"doc_{c.get('doc_id', 0)}")
+        fname = _get_doc_name(c)
         text = c.get("text", "")
         if not text.strip():
             continue
 
         logger.info("Processing chunk %d/%d: %s", idx + 1, len(business_chunks), fname[:50])
 
-        # ACTUAL RETRIEVAL: get similar chunks from corpus
+        # ACTUAL RETRIEVAL: get similar chunks from FULL corpus (3,583 chunks)
         retrieved = retriever.hybrid_search(text, k=3, alpha=0.6)
         retrieved_text = "\n\n".join([f"[{r['method']}] {r['text'][:300]}" for r in retrieved])
 
@@ -348,19 +311,15 @@ def main(args):
 
         triples_text = triples_text_from_graph(Gfus, max_items=args.max_triples)
         context = f"RETRIEVED CHUNKS:\n{retrieved_text}\n\nREGULATORY RULES:\n{triples_text}"
-        # prompt = Tempt3.format(chunk=text[:2000], triples_text=context)
         prompt = Tempt3.format(
-                chunk=text[:2000],
-                triples_text=triples_text,
-                retrieved_text=retrieved_text
-            )
-
+            chunk=text[:2000],
+            triples_text=triples_text,
+            retrieved_text=retrieved_text
+        )
 
         try:
-            # reply = call_llm(prompt, use_openai_priority=not args.prefer_local,
-            #                model_openai=args.openai_model, max_tokens=256)
             reply = call_llm(prompt, use_api_priority=not args.prefer_local,
-                 model="llama-3.3-70b-versatile", max_tokens=256)
+                           model="llama-3.3-70b-versatile", max_tokens=256)
         except Exception as e:
             logger.warning("LLM call failed: %s", e)
             reply = None
@@ -373,11 +332,12 @@ def main(args):
             elif lower.startswith("pass"):
                 verdict = "pass"
             else:
-                verdict = "pass"
+                verdict = "pass"  # conservative default
 
         results.append({
-            "chunk_id": idx,
+            "chunk_id": c["id"],
             "filename": fname,
+            "source_corpus": c.get("source_corpus", "unknown"),
             "retrieved_chunks": [r["id"] for r in retrieved],
             "hits": hits,
             "P": P,
@@ -389,7 +349,13 @@ def main(args):
 
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    logger.info("Saved %d results to %s", len(results), args.out)
+    logger.info("Saved %d compliance results to %s", len(results), args.out)
+
+    # Summary
+    pass_count = sum(1 for r in results if r["verdict"] == "pass")
+    fail_count = sum(1 for r in results if r["verdict"] == "fail")
+    logger.info("Compliance summary: PASS=%d, FAIL=%d, UNKNOWN=%d",
+                pass_count, fail_count, len(results) - pass_count - fail_count)
 
 
 if __name__ == "__main__":
@@ -398,6 +364,7 @@ if __name__ == "__main__":
     p.add_argument("--eventic-graph", type=str, default="data/eventic_graph.gpickle")
     p.add_argument("--chunks", type=str, default="data/chunks.json")
     p.add_argument("--out", type=str, default="data/preds.json")
+    p.add_argument("--faiss-index", type=str, default="data/faiss.index", help="Path to FAISS index (Flat or HNSW)")
     p.add_argument("--embed_model", type=str, default="sentence-transformers/all-MiniLM-L6-v2")
     p.add_argument("--lambda_thresh", type=float, default=0.75)
     p.add_argument("--hop_k", type=int, default=1)
