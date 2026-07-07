@@ -1,0 +1,12 @@
+[
+  {
+    "id": 999,
+    "filename": "synthetic_violation.txt",
+    "text": "Users cannot withdraw consent once provided. Personal data will be retained indefinitely even after the purpose is completed. We share your data with third parties without any notice."
+  },
+  {
+    "id": 998,
+    "filename": "synthetic_compliant.txt",
+    "text": "Users may withdraw consent at any time by contacting our Grievance Officer. Personal data is deleted within 30 days of purpose completion. We obtain explicit consent before sharing data with third parties and provide clear notice."
+  }
+]

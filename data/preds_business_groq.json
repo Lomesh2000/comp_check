@@ -1,0 +1,127 @@
+[
+  {
+    "chunk_id": 0,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "retrieved_chunks": [
+      58,
+      59,
+      60
+    ],
+    "hits": [
+      "Contact Information",
+      "Data Protection Officer",
+      "ACTION::Appoint Data Protection Officer",
+      "Access",
+      "Data Protection Board",
+      "Consent Manager",
+      "ACTION::mayBeFiledAgainst Board Decision",
+      "ACTION::RightTo Nominee",
+      "ACTION::manages Consent",
+      "ACTION::RightTo Access"
+    ],
+    "P": [
+      "Contact Information",
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Breach",
+      "Data Audit"
+    ],
+    "N": [
+      "Complaint",
+      "Grievance",
+      "Data Fiduciary",
+      "Harm",
+      "Appeal",
+      "Notification",
+      "Directions",
+      "Notice",
+      "Significant Data Fiduciary",
+      "Penalty"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Complaint mayBeFiledWith Data Protection Board\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm\n- Notice mustDescribe Contact Information\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit"
+  },
+  {
+    "chunk_id": 1,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "retrieved_chunks": [
+      59,
+      68,
+      58
+    ],
+    "hits": [
+      "Sensitive Personal Data",
+      "Data Protection Officer",
+      "Personal Data",
+      "ACTION::Appoint Data Protection Officer",
+      "ACTION::mayBeFiledWith Data Protection Board",
+      "Data Fiduciary",
+      "Data Audit",
+      "Data Protection Board",
+      "Data Breach",
+      "ACTION::Conduct Data Audit"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Complaint",
+      "Data Fiduciary",
+      "Grievance",
+      "Harm",
+      "Appeal",
+      "Notification",
+      "Directions",
+      "Enhanced Protection",
+      "Significant Data Fiduciary",
+      "Purpose Completion",
+      "Lawful Purpose",
+      "Penalty"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Sensitive Personal Data requires Enhanced Protection\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Complaint mayBeFiledWith Data Protection Board\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Data Breach requires Notification\n- Data Breach mayCause Harm\n- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion"
+  },
+  {
+    "chunk_id": 2,
+    "filename": "Indian Oil Priivacy policy.pdf",
+    "retrieved_chunks": [
+      60,
+      58,
+      82
+    ],
+    "hits": [
+      "ACTION::Describe Rights",
+      "Compliance",
+      "ACTION::Ensure Compliance",
+      "ACTION::Appoint Data Protection Officer",
+      "ACTION::manages Consent",
+      "ACTION::subjectTo Government Restrictions",
+      "Access",
+      "Compliance Records",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "Consent Manager"
+    ],
+    "P": [
+      "Rights",
+      "Compliance",
+      "Compliance Records",
+      "Lawful Purpose",
+      "Security Safeguards"
+    ],
+    "N": [
+      "Data Fiduciary",
+      "Personal Data",
+      "Significant Data Fiduciary",
+      "Notice"
+    ],
+    "verdict": "fail",
+    "llm_reply": "FAIL",
+    "triples_text": "- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustMaintain Compliance Records\n- Notice mustDescribe Rights\n- Significant Data Fiduciary mustEnsure Compliance\n- Personal Data mustBeProcessedFor Lawful Purpose"
+  }
+]

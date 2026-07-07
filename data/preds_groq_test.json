@@ -1,0 +1,223 @@
+[
+  {
+    "chunk_id": 0,
+    "filename": "DigitalPersonalDataProtectionAct2023.pdf",
+    "hits": [
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "Sensitive Personal Data",
+      "Data Protection Board",
+      "ACTION::mayBeFiledWith Data Protection Board",
+      "Personal Data",
+      "Data Fiduciary",
+      "Data Breach",
+      "Compliance Records",
+      "ACTION::subjectTo Government Restrictions"
+    ],
+    "P": [
+      "Data Protection Officer",
+      "Data Protection Board",
+      "Data Audit",
+      "Data Breach",
+      "Sensitive Personal Data"
+    ],
+    "N": [
+      "Enhanced Protection",
+      "Harm",
+      "Complaint",
+      "Penalty",
+      "Appeal",
+      "Significant Data Fiduciary",
+      "Grievance",
+      "Directions",
+      "Notification",
+      "Data Fiduciary"
+    ],
+    "verdict": "fail",
+    "evidence": [
+      {
+        "raw": "FAIL"
+      }
+    ],
+    "llm_reply": "FAIL",
+    "triples_text": "- Complaint mayBeFiledWith Data Protection Board\n- Data Breach requires Notification\n- Data Breach mayCause Harm\n- Sensitive Personal Data requires Enhanced Protection\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 1,
+    "filename": "DigitalPersonalDataProtectionAct2023.pdf",
+    "hits": [
+      "Compliance Records",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "ACTION::subjectTo Additional Obligations",
+      "Compliance",
+      "ACTION::requires Notice",
+      "ACTION::subjectTo Government Restrictions",
+      "ACTION::appliesTo Processing",
+      "ACTION::Provide Notice",
+      "ACTION::mayBeFiledAgainst Board Decision",
+      "ACTION::RightTo Withdraw Consent"
+    ],
+    "P": [
+      "Compliance Records",
+      "Compliance",
+      "Data Audit",
+      "Lawful Purpose",
+      "Additional Obligations"
+    ],
+    "N": [
+      "Personal Data",
+      "Significant Data Fiduciary",
+      "Data Fiduciary"
+    ],
+    "verdict": "fail",
+    "evidence": [
+      {
+        "raw": "FAIL"
+      }
+    ],
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Fiduciary mustMaintain Compliance Records"
+  },
+  {
+    "chunk_id": 2,
+    "filename": "DigitalPersonalDataProtectionAct2023.pdf",
+    "hits": [
+      "Data Fiduciary",
+      "ACTION::Appoint Data Protection Officer",
+      "Data Protection Officer",
+      "Significant Data Fiduciary",
+      "Data Protection Board",
+      "ACTION::manages Consent",
+      "Personal Data",
+      "Data Principal",
+      "Consent Manager",
+      "ACTION::Conduct Data Audit"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Additional Obligations",
+      "Data Accuracy",
+      "Notice",
+      "Security Safeguards",
+      "Compliance",
+      "Grievance Redressal",
+      "Complaint",
+      "Data Breach",
+      "Consent",
+      "Data Audit",
+      "Directions",
+      "Penalty",
+      "Appeal",
+      "Risk Assessment",
+      "Significant Data Fiduciary",
+      "Data Protection Officer",
+      "Grievance",
+      "Compliance Records"
+    ],
+    "verdict": "fail",
+    "evidence": [
+      {
+        "raw": "FAIL"
+      }
+    ],
+    "llm_reply": "FAIL",
+    "triples_text": "- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 3,
+    "filename": "DigitalPersonalDataProtectionAct2023.pdf",
+    "hits": [
+      "Data Fiduciary",
+      "Data Protection Officer",
+      "Data Breach",
+      "ACTION::Appoint Data Protection Officer",
+      "ACTION::Notify Data Breach",
+      "Data Audit",
+      "Significant Data Fiduciary",
+      "Data Protection Board",
+      "ACTION::Conduct Data Audit",
+      "Personal Data"
+    ],
+    "P": [
+      "Data Fiduciary",
+      "Significant Data Fiduciary",
+      "Data Audit",
+      "Data Protection Officer",
+      "Data Protection Board"
+    ],
+    "N": [
+      "Additional Obligations",
+      "Data Accuracy",
+      "Notice",
+      "Security Safeguards",
+      "Compliance",
+      "Grievance Redressal",
+      "Complaint",
+      "Data Breach",
+      "Consent",
+      "Data Audit",
+      "Directions",
+      "Penalty",
+      "Appeal",
+      "Risk Assessment",
+      "Significant Data Fiduciary",
+      "Data Protection Officer",
+      "Grievance",
+      "Compliance Records"
+    ],
+    "verdict": "fail",
+    "evidence": [
+      {
+        "raw": "FAIL"
+      }
+    ],
+    "llm_reply": "FAIL",
+    "triples_text": "- Complaint mayBeFiledWith Data Protection Board\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Significant Data Fiduciary mustConduct Risk Assessment\n- Significant Data Fiduciary mustEnsure Compliance\n- Significant Data Fiduciary subjectTo Additional Obligations\n- Data Protection Board handles Grievance\n- Data Protection Board handles Complaint\n- Data Protection Board handles Appeal\n- Data Protection Board issues Directions\n- Data Protection Board imposes Penalty\n- Data Fiduciary mustProvide Notice\n- Data Fiduciary mustObtain Consent\n- Data Fiduciary mustEnsure Data Accuracy\n- Data Fiduciary mustImplement Security Safeguards\n- Data Fiduciary mustProvide Grievance Redressal\n- Data Fiduciary mustNotify Data Breach\n- Data Fiduciary mustMaintain Compliance Records\n- Data Fiduciary subjectTo Penalty"
+  },
+  {
+    "chunk_id": 4,
+    "filename": "DigitalPersonalDataProtectionAct2023.pdf",
+    "hits": [
+      "Sensitive Personal Data",
+      "Data Breach",
+      "Personal Data",
+      "Data Fiduciary",
+      "Compliance Records",
+      "ACTION::Conduct Data Audit",
+      "Data Audit",
+      "Data Protection Officer",
+      "ACTION::BeProcessedFor Lawful Purpose",
+      "ACTION::Appoint Data Protection Officer"
+    ],
+    "P": [
+      "Sensitive Personal Data",
+      "Personal Data",
+      "Data Breach",
+      "Data Audit",
+      "Data Protection Officer"
+    ],
+    "N": [
+      "Lawful Purpose",
+      "Enhanced Protection",
+      "Significant Data Fiduciary",
+      "Notification",
+      "Harm",
+      "Purpose Completion",
+      "Data Fiduciary"
+    ],
+    "verdict": "fail",
+    "evidence": [
+      {
+        "raw": "FAIL"
+      }
+    ],
+    "llm_reply": "FAIL",
+    "triples_text": "- Personal Data mustBeProcessedFor Lawful Purpose\n- Personal Data mustBeDeletedAfter Purpose Completion\n- Data Breach requires Notification\n- Data Breach mayCause Harm\n- Sensitive Personal Data requires Enhanced Protection\n- Significant Data Fiduciary mustAppoint Data Protection Officer\n- Significant Data Fiduciary mustConduct Data Audit\n- Data Fiduciary mustNotify Data Breach"
+  }
+]

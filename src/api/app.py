@@ -17,6 +17,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import uvicorn
 import io
+sys.path.insert(0, str(Path(__file__).parent.parent / "retriever_rag"))
 
 try:
     from PyPDF2 import PdfReader
@@ -65,6 +66,15 @@ STATIC_GRAPH_PATH = DATA_DIR / "static_graph.gpickle"
 EVENTIC_GRAPH_PATH = DATA_DIR / "eventic_graph.gpickle"
 CHUNKS_PATH = DATA_DIR / "chunks.json"
 FAISS_INDEX_PATH = DATA_DIR / "faiss.index"
+
+_static_graph: Optional[nx.DiGraph] = None
+_eventic_graph: Optional[nx.DiGraph] = None
+_embeddings_model: Optional[SentenceTransformer] = None
+_eventic_nodes: Optional[List[str]] = None
+_eventic_embs: Optional[np.ndarray] = None
+_static_node_order: Optional[List[str]] = None
+_static_embs: Optional[np.ndarray] = None
+_faiss_index: Optional[Any] = None
 
 EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
@@ -157,6 +167,81 @@ def split_text_into_chunks(text: str, chunk_size: int = 500, overlap: int = 100)
     return chunks if chunks else [text] if text else []
 
 
+# def run_compliance_text(
+#     text: str,
+#     lambda_thresh: float = 0.75,
+#     hop_k: int = 1,
+#     max_triples: int = 60,
+#     prefer_local: bool = False,
+#     openai_model: str = "gpt-3.5-turbo",
+# ) -> ComplianceCheckResponse:
+#     if not _embeddings_model or not _eventic_graph or not _static_graph:
+#         raise RuntimeError("Models not initialized")
+
+#     text_vec = _embeddings_model.encode([text], convert_to_numpy=True)[0]
+#     text_vec = text_vec / (np.linalg.norm(text_vec) + 1e-12)
+
+#     Gfus, hits, P, N = build_fused_subgraph(
+#         text,
+#         text_vec,
+#         _eventic_nodes,
+#         _eventic_embs,
+#         _eventic_graph,
+#         _static_graph,
+#         lambda_thresh=lambda_thresh,
+#         hop_k=hop_k,
+#     )
+
+#     triples_text = triples_text_from_graph(Gfus, max_items=max_triples)
+#     prompt = Tempt3.format(
+#         chunk=text[:2000] + ("\n\n[TRUNCATED]" if len(text) > 2000 else ""),
+#         triples_text=triples_text,
+#     )
+
+#     try:
+#         reply = call_llm(
+#             prompt,
+#             use_openai_priority=not prefer_local,
+#             model_openai=openai_model,
+#             max_tokens=256,
+#         )
+#     except Exception as e:
+#         logger.warning(f"LLM call failed: {e}")
+#         reply = None
+
+#     if reply:
+#         if "<Compliance Check Passed>" in reply:
+#             verdict = "pass"
+#             evidence = []
+#         elif "<Compliance Check Failed>" in reply:
+#             verdict = "fail"
+#             try:
+#                 suffix = reply.split("<Compliance Check Failed>")[-1].strip()
+#                 parsed = json.loads(suffix)
+#                 evidence = parsed
+#             except Exception:
+#                 evidence = [{"raw": reply.split("<Compliance Check Failed>")[-1].strip()}]
+#         else:
+#             lower = reply.lower()
+#             if "failed" in lower or "violate" in lower or "violation" in lower:
+#                 verdict = "fail"
+#             else:
+#                 verdict = "pass"
+#             evidence = [{"raw": reply[:400]}]
+#     else:
+#         verdict = "unknown"
+#         evidence = []
+
+#     return ComplianceCheckResponse(
+#         verdict=verdict,
+#         evidence=evidence,
+#         triples_text=triples_text,
+#         llm_reply=reply,
+#         hits=hits,
+#         P=P,
+#         N=N,
+#     )
+
 def run_compliance_text(
     text: str,
     lambda_thresh: float = 0.75,
@@ -168,6 +253,12 @@ def run_compliance_text(
     if not _embeddings_model or not _eventic_graph or not _static_graph:
         raise RuntimeError("Models not initialized")
 
+    # Retrieve relevant chunks from corpus
+    from retriever_rag.retriever import UnifiedRetriever
+    retriever = UnifiedRetriever()
+    retrieved = retriever.hybrid_search(text, k=5, alpha=0.6)
+    retrieved_text = "\n\n".join([f"[{r['method']}] {r['text'][:300]}" for r in retrieved])
+
     text_vec = _embeddings_model.encode([text], convert_to_numpy=True)[0]
     text_vec = text_vec / (np.linalg.norm(text_vec) + 1e-12)
 
@@ -178,14 +269,20 @@ def run_compliance_text(
         _eventic_embs,
         _eventic_graph,
         _static_graph,
+        _static_node_order,
+        _static_embs,
+        _embeddings_model,
         lambda_thresh=lambda_thresh,
         hop_k=hop_k,
     )
 
     triples_text = triples_text_from_graph(Gfus, max_items=max_triples)
+    
+    # Build prompt with retrieved chunks + graph triples
+    context = f"RETRIEVED DOCUMENT CHUNKS:\n{retrieved_text}\n\nREGULATORY RULES:\n{triples_text}"
     prompt = Tempt3.format(
         chunk=text[:2000] + ("\n\n[TRUNCATED]" if len(text) > 2000 else ""),
-        triples_text=triples_text,
+        triples_text=context,
     )
 
     try:
@@ -200,24 +297,14 @@ def run_compliance_text(
         reply = None
 
     if reply:
-        if "<Compliance Check Passed>" in reply:
+        lower = reply.strip().lower()
+        if "pass" in lower and "fail" not in lower:
             verdict = "pass"
-            evidence = []
-        elif "<Compliance Check Failed>" in reply:
+        elif "fail" in lower:
             verdict = "fail"
-            try:
-                suffix = reply.split("<Compliance Check Failed>")[-1].strip()
-                parsed = json.loads(suffix)
-                evidence = parsed
-            except Exception:
-                evidence = [{"raw": reply.split("<Compliance Check Failed>")[-1].strip()}]
         else:
-            lower = reply.lower()
-            if "failed" in lower or "violate" in lower or "violation" in lower:
-                verdict = "fail"
-            else:
-                verdict = "pass"
-            evidence = [{"raw": reply[:400]}]
+            verdict = "unknown"
+        evidence = [{"raw": reply[:400]}]
     else:
         verdict = "unknown"
         evidence = []
@@ -227,29 +314,99 @@ def run_compliance_text(
         evidence=evidence,
         triples_text=triples_text,
         llm_reply=reply,
-        hits=hits,
+        hits=[r["text"][:200] for r in retrieved],  # Return retrieved chunks as hits
         P=P,
         N=N,
     )
 
 
+# def init_global_state():
+#     """Initialize global state on startup."""
+#     global _static_graph, _eventic_graph, _embeddings_model, _eventic_nodes, _eventic_embs, _faiss_index
+
+#     logger.info("Initializing global state...")
+
+#     if not SBERT_AVAILABLE:
+#         raise RuntimeError("sentence-transformers not installed")
+
+#     # Load graphs
+#     try:
+#         _static_graph = load_graph(str(STATIC_GRAPH_PATH))
+#         logger.info(f"Loaded static graph: {_static_graph.number_of_nodes()} nodes, {_static_graph.number_of_edges()} edges")
+#     except Exception as e:
+#         logger.warning(f"Failed to load static graph: {e}")
+#         _static_graph = nx.DiGraph()
+
+#     try:
+#         _eventic_graph = load_graph(str(EVENTIC_GRAPH_PATH))
+#         logger.info(f"Loaded eventic graph: {_eventic_graph.number_of_nodes()} nodes, {_eventic_graph.number_of_edges()} edges")
+#     except Exception as e:
+#         logger.error(f"Failed to load eventic graph: {e}")
+#         raise
+
+#     # Load embeddings model
+#     try:
+#         _embeddings_model = SentenceTransformer(EMBED_MODEL)
+#         logger.info(f"Loaded embeddings model: {EMBED_MODEL}")
+#     except Exception as e:
+#         logger.error(f"Failed to load embeddings model: {e}")
+#         raise
+
+#     # Precompute eventic node embeddings
+#     try:
+#         from retriever_rag.rag_runner import compute_eventic_node_embeddings
+#         _eventic_nodes, _eventic_embs = compute_eventic_node_embeddings(_eventic_graph, _embeddings_model)
+#         logger.info(f"Computed eventic embeddings: {len(_eventic_nodes)} nodes")
+#     except Exception as e:
+#         logger.error(f"Failed to compute eventic embeddings: {e}")
+#         raise
+
+#     # Load FAISS index (optional)
+#     if FAISS_AVAILABLE and FAISS_INDEX_PATH.exists():
+#         try:
+#             _faiss_index = faiss.read_index(str(FAISS_INDEX_PATH))
+#             logger.info("Loaded FAISS index")
+#         except Exception as e:
+#             logger.warning(f"Failed to load FAISS index: {e}")
+#     else:
+#         logger.info("FAISS index not available")
+
 def init_global_state():
     """Initialize global state on startup."""
-    global _static_graph, _eventic_graph, _embeddings_model, _eventic_nodes, _eventic_embs, _faiss_index
+    global _static_graph, _eventic_graph, _embeddings_model
+    global _eventic_nodes, _eventic_embs, _static_node_order, _static_embs, _faiss_index
 
     logger.info("Initializing global state...")
 
     if not SBERT_AVAILABLE:
         raise RuntimeError("sentence-transformers not installed")
 
-    # Load graphs
+    # Load static graph + embeddings
     try:
         _static_graph = load_graph(str(STATIC_GRAPH_PATH))
         logger.info(f"Loaded static graph: {_static_graph.number_of_nodes()} nodes, {_static_graph.number_of_edges()} edges")
+        
+        # Load static node embeddings
+        npz_path = DATA_DIR / "static" / "node_embeddings.npz"
+        if npz_path.exists():
+            arr = np.load(str(npz_path), allow_pickle=True)
+            _static_node_order = list(arr["node_order"])
+            _static_embs = arr["embeddings"]
+            norms = np.linalg.norm(_static_embs, axis=1, keepdims=True)
+            norms[norms == 0] = 1.0
+            _static_embs = _static_embs / norms
+            logger.info(f"Loaded static embeddings: {len(_static_node_order)} nodes")
+        else:
+            logger.warning("Static embeddings not found")
+            _static_node_order = []
+            _static_embs = None
     except Exception as e:
         logger.warning(f"Failed to load static graph: {e}")
         _static_graph = nx.DiGraph()
+        _static_node_order = []
+        _static_embs = None
 
+    # Load eventic graph
     try:
         _eventic_graph = load_graph(str(EVENTIC_GRAPH_PATH))
         logger.info(f"Loaded eventic graph: {_eventic_graph.number_of_nodes()} nodes, {_eventic_graph.number_of_edges()} edges")
@@ -267,7 +424,6 @@ def init_global_state():
 
     # Precompute eventic node embeddings
     try:
-        from retriever_rag.rag_runner import compute_eventic_node_embeddings
         _eventic_nodes, _eventic_embs = compute_eventic_node_embeddings(_eventic_graph, _embeddings_model)
         logger.info(f"Computed eventic embeddings: {len(_eventic_nodes)} nodes")
     except Exception as e:
@@ -283,7 +439,6 @@ def init_global_state():
             logger.warning(f"Failed to load FAISS index: {e}")
     else:
         logger.info("FAISS index not available")
-
 
 # ------- FastAPI app -------
 app = FastAPI(
