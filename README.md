@@ -3,7 +3,7 @@
 ## Understand policies. Detect risks. Explain decisions.
 
 ## 🚀 Overview
-LexGuard is an AI-powered compliance analysis system that uses a hybrid Graph + RAG pipeline to evaluate policy documents and detect violations with explainability.
+PolicyLens is an AI-powered compliance analysis system that uses a hybrid Graph + RAG pipeline to evaluate policy documents and detect violations with explainability.
 
 ---
 
